@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html data-n-head="" data-n-head-ssr>
+  <head>
+    <meta data-n-head="true" charset="utf-8"><meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport"><meta data-n-head="true" content="Joy Programming Language" name="description" data-hid="description"><title data-n-head="true">Joy language</title><link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,500|Roboto:400|Roboto+Mono:400" rel="stylesheet" data-n-head="true"><link href="/favicon.ico" rel="icon" data-n-head="true" type="image/x-icon"><link href="/favicon.ico?" rel="shortcut icon" data-n-head="true" type="image/x-icon"><link href="/_nuxt/manifest.10669f42b2e188f55eb1.js" rel="preload" as="script"><link href="/_nuxt/vendor.230cb916d1973aa790f3.js" rel="preload" as="script"><link href="/_nuxt/app.0a856c7cf6fb3e349fa2.js" rel="preload" as="script"><link href="/_nuxt/layouts/default.29c0e08e13310e3682fc.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/nested-recursion-and-a-new-recursion-combinator.d40eac9bf6ad0e5cac92.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/survey-of-reproducing-programs.ed8409adcfb2bdec6eeb.js" rel="prefetch"><link href="/_nuxt/pages/libraries-and-c-sources.d2ffa370ff989df9d359.js" rel="prefetch"><link href="/_nuxt/pages/index.73b5e04f9a3fcda5b5fe.js" rel="prefetch"><link href="/_nuxt/pages/about.a3431c5910b96e7d0298.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-algebra-of-joy.7f385b55e84045676f24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-annoying-quadratic-formula.a3d9ef30d4f74df89dfd.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/church-arithmetic-and-church-logic-with-brent-kirby.e11588a1a251690d41af.js" rel="prefetch"><link href="/_nuxt/pages/rationale-for-joy.3e067852511f512169f0.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/tutorial-on-joy.9a4df70c3d63708c2b23.js" rel="prefetch"><link href="/_nuxt/pages/overview-of-joy.8733ad0cbce5d065d604.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/miscellaneous-miniature-implementations-of-joy.417498df53623dd27f3a.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/fast-small-truth-tables.9b1b75741215fa7afac3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/programming-in-joy.d4bc3bc57b9855085dc1.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/design-of-matrix-multiplication-programs.8e00ebe2e6e430523681.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/imperative-thinking-for-joy-programs.223ec58c271bc7112421.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/design-of-a-joy-interpreter-written-in-joy.eaa748fa0ea2130e1164.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/joy-compared-with-other-functional-languages.e9b1e34a3b81758a64f2.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/recursion-theory-and-joy.7d268252a6e6c71fa9f2.js" rel="prefetch"><link href="/_nuxt/pages/faq.9ffdbd52d27b2df75f94.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/mathematical-foundations-of-joy.4f0b584e560cf803bb24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/floy-a-flat-concatenative-subset-of-joy.9162d7b51e29e1b5b1b9.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/html-manual.e3473b0453170639a088.js" rel="prefetch"><link href="/_nuxt/pages/faq-part-2.9630745e3aaebc47633f.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/lazy-lists-as-reproducing-programs.9516d2d5134cfed90ce3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-current-implementation.e033c23017443bc35c24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/a-rewriting-system-for-joy.4157d6f1ef190fb675ea.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/atomic-programs-of-joy.f2cb1414ae2b6ed9401e.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/prospectus-for-john-cowans-joy1.cb4661329c1ed2df6752.js" rel="prefetch"><style data-vue-ssr-id="d505b096:0">html{font-family:Roboto,Arial,sans-serif;margin:0;font-weight:400;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-box-sizing:border-box;box-sizing:border-box}body{margin:0;height:100%}:after,:before,:not(pre){-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}.wrapper{min-height:calc(100vh - 102px)}a{color:#3273dc;text-decoration:none}a:hover{text-decoration:underline}</style><style data-vue-ssr-id="6cc65792:0">nav[data-v-251e63b6]{background-color:#000}ul[data-v-251e63b6]{list-style-type:none;padding:0;margin:0}li[data-v-251e63b6]{-webkit-transition:all .2s ease-out;transition:all .2s ease-out;display:inline-block;padding:0;cursor:pointer}li[data-v-251e63b6]:hover{-webkit-transform:scale(1.04);transform:scale(1.04);background-color:#fff;color:#000}li a[data-v-251e63b6]{display:block;padding:15px 25px;text-decoration:none;color:#fff;text-align:center}li:hover a[data-v-251e63b6]{color:#000}.nuxt-link-exact-active[data-v-251e63b6]{text-decoration:overline}</style><style data-vue-ssr-id="23d2604d:0">h1[data-v-7e83a563]{font-size:26px}.lists[data-v-7e83a563]{margin-top:37px;padding-left:12vw;padding-right:12vw}.top-list-item[data-v-7e83a563]{margin-top:11px}li[data-v-7e83a563]{line-height:39px}.no-style-litem[data-v-7e83a563]{list-style-type:none}ul[data-v-7e83a563]{list-style-type:circle}h6[data-v-7e83a563]{font-size:17px}p[data-v-7e83a563]{margin-top:8px;line-height:24px;font-size:16px}</style><style data-vue-ssr-id="11afd06d:0">p[data-v-5890672a]{margin-top:16px;margin-bottom:16px}hr[data-v-5890672a]{margin-bottom:16px}pre[data-v-5890672a]{margin-bottom:auto}code[data-v-5890672a],kbd[data-v-5890672a],pre[data-v-5890672a]{font-family:Roboto Mono,monospace}</style><style data-vue-ssr-id="ca9343dc:0">footer[data-v-c785faa8]{padding:11px 20px 0;height:52px}p[data-v-c785faa8]{-webkit-transition:all .1s ease-in;transition:all .1s ease-in;font-size:15px;float:right;margin:0 16px}a[data-v-c785faa8]{color:#000;text-decoration:none}p[data-v-c785faa8]:hover{-webkit-transform:scale(.94);transform:scale(.94);color:#000;-webkit-text-decoration:#3273dc overline;text-decoration:#3273dc overline}</style>
+  </head>
+  <body data-n-head="">
+    <div id="__nuxt" data-server-rendered="true"><div id="__layout"><div class="container" lang="en"><nav data-v-251e63b6 role="navigation"><ul data-v-251e63b6><li data-v-251e63b6><a href="/" data-v-251e63b6 class="nuxt-link-active">Home</a><li data-v-251e63b6><a href="/papers-on-joy" data-v-251e63b6 class="nuxt-link-active">Papers</a><li data-v-251e63b6><a href="/libraries-and-c-sources" data-v-251e63b6>Libraries/C sources</a><li data-v-251e63b6><a href="/about" data-v-251e63b6>About</a></ul></nav><main class="lists" data-v-7e83a563><div data-v-7e83a563><article data-v-5890672a data-v-7e83a563 data-v-7e83a563><p data-v-5890672a>
+    Contents:
+  <ol data-v-5890672a><li data-v-5890672a><a href="#TOC_1" data-v-5890672a>Introduction</a><li data-v-5890672a><a href="#TOC_2" data-v-5890672a>Recursive Definitions</a><li data-v-5890672a><a href="#TOC_3" data-v-5890672a>Self-application</a><li data-v-5890672a><a href="#TOC_4" data-v-5890672a>Partially explicit recursion</a><li data-v-5890672a><a href="#TOC_5" data-v-5890672a>A nested recursion combinator</a></ol><a name="TOC_1" data-v-5890672a><h2 data-v-5890672a><strong data-v-5890672a>Introduction</strong></h2></a><p data-v-5890672a>
+    This note was prompted by Nick Forde's version of a Joy operator which computes the
+    Ackermann function which is one of the few well-known functions that use nested
+    recursion. He was trying to avoid explicit recursion in the definition, but found
+    that none of the recursion combinators of Joy <em data-v-5890672a>at the time</em> were up to
+    the task. His finding prompted the inclusion of a new Joy combinator
+    <em data-v-5890672a>condnestrec</em> into the language.
+  <p data-v-5890672a>
+    This note gives definitions of (the common simplification of) Ackermann's function,
+    of McCarthy's 91-function, of a function producing a Hamiltonian path over a hypercube,
+    of a function producing Gray sequences, and of the Hanoi problem. All involve nested
+    recursion. Several possible definition methods are used.
+  <p data-v-5890672a>
+    The definitions and the output of the examples in this note were obtained by running
+    the file
+    <a href="joy/jp-nestrec.joy" data-v-5890672a>
+    jp-nestrec.joy</a>. Only the descriptive text in
+    this note was added later.
+    <a name="TOC_2" data-v-5890672a></a><h2 data-v-5890672a><a name="TOC_2" data-v-5890672a><strong data-v-5890672a>Recursive Definitions</strong></a></h2><p data-v-5890672a>
+    The following is the more or less standard definition of the factorial function:
+    <br data-v-5890672a><pre data-v-5890672a>     fact(n) = 
+      IF n = 0 
+      THEN 1 
+      ELSE  n * fact(n-1) 
+  </pre>
+  Here is the corresponding recursive definition in Joy:
+  <br data-v-5890672a><pre data-v-5890672a> DEFINE
+        r-fact == 
+      [ null ] 
+      [ pop 1] 
+      [ dup pred r-fact *] 
+      ifte. 
+  </pre>
+  The following tests this definition - redundantly, of course. Note that the
+  response from Joy is indented to the left. The same style will be used in all later
+  tests.
+  <pre data-v-5890672a> [ 0 1 2 3 4 5 6 ]  [r-fact]  map. 
+  [1 1 2 6 24 120 720]
+  </pre><p data-v-5890672a>
+    The next definition is of a not so familiar function originally due to McCarthy,
+    his intriguing "91 function":
+  <pre data-v-5890672a>     mcc91(i) = 
+      IF i > 100 
+      THEN i - 10 
+      ELSE mcc91(mcc91(i + 11)) 
+  </pre>
+  Note one very important feature not shared with the factorial function: In
+  the ELSE-part the recursive call to itself relies on the result of another recursive
+  call to itself. There are very few function definitions in which this pattern appears.
+  The following is the corresponding definition in Joy, note the double recursive call
+  in the second last line:
+  <pre data-v-5890672a> DEFINE 
+        r-mcc91 == 
+      [ 100 > ] 
+      [ 10 - ] 
+      [ 11 + r-mcc91 r-mcc91 ] 
+      ifte. 
+  </pre>
+  Here is a simple test for some representative values:
+  <br data-v-5890672a><pre data-v-5890672a> [ -7 42 99 100 101 102 345 ]  [r-mcc91]  map. 
+  [91 91 91 91 91 92 335]
+  </pre><p data-v-5890672a>
+    The Ackermann function widely quoted in the literature is actually a simplification
+    of the function originally defined by Ackermann to show that there are terminating
+    recursive functions that are not primitive recursive. Both the original and the
+    descendent due to Peters grow at an extraordinary rate. Here is the now common
+    definition:
+  <pre data-v-5890672a>     ack(m, n) = 
+      IF m = 0  THEN n + 1 
+      ELSEIF n = 0  THEN ack(m - 1, 1) 
+      ELSE ack(m - 1, ack(m, n - 1)) 
+  </pre>
+  and its counterpart in Joy:
+  <br data-v-5890672a><pre data-v-5890672a> DEFINE 
+        r-ack == 
+    # stack putln 
+      [ [ [pop null]  popd succ ] 
+        [ [null]  pop pred 1 r-ack ] 
+        [ [dup pred swap] dip pred r-ack r-ack ] ] 
+      cond. 
+  </pre>
+  The line that has been commented out with the hash character is useful if
+  one wants to see a trce of what is sitting on the stack. The following tests are
+  complete from (0,0) up to (3,5), and give some indication of the behaviour. The final
+  line only gives the value for (4,0) because computation for (4,1) crashes the Joy
+  stack (and also, it seems, calculations in other languages).
+  <pre data-v-5890672a> [ [0 0] [0 1] [0 2] [0 3] [0 4] [0 5] ]   [i r-ack]  map  putln 
+    [ [1 0] [1 1] [1 2] [1 3] [1 4] [1 5] ]   [i r-ack]  map  putln 
+    [ [2 0] [2 1] [2 2] [2 3] [2 4] [2 5] ]   [i r-ack]  map  putln 
+    [ [3 0] [3 1] [3 2] [3 3] [3 4] [3 5] ]   [i r-ack]  map  putln 
+    [ [4 0]                               ]   [i r-ack]  map. 
+  [1 2 3 4 5 6] 
+  [2 3 4 5 6 7] 
+  [3 5 7 9 11 13] 
+  [5 13 29 61 125 253] 
+  [13]
+  </pre><p data-v-5890672a>
+    In the Towers of Hanoi puzzle the disks have to be moved in a particular order. Ignoring
+    what the target peg is, for three disks the order is 1 2 1 3 1 2 1. In general
+    for n disks it is a sequence of (2^n)-1 steps. In the usual implementation of the
+    Hanoi program the disks that have to be moved are not mentioned at all. The sequence
+    of steps is also one that performs a Hamiltonian path on an n-dimensional hypercube.
+    The following is the Joy program:
+  <pre data-v-5890672a>  
+    DEFINE 
+        r-hamilhyp ==   #  [] n  =>  [...] 
+      [ null ] 
+      [ pop ] 
+      [ dup rollup pred       r-hamilhyp 
+        dupd cons swap pred   r-hamilhyp ] 
+      ifte. 
+  </pre>
+  Note that unlike the program for the 91-function and the Ackermann function,
+  the two recursive calls are not consecutive. Since the sequences are less known than
+  the Hanoi program, here are several test outputs:
+  <br data-v-5890672a><pre data-v-5890672a> []  3  r-hamilhyp. 
+  [1 2 1 3 1 2 1]
+    []  4  r-hamilhyp. 
+  [1 2 1 3 1 2 1 4 1 2 1 3 1 2 1]
+    []  5  r-hamilhyp. 
+  [1 2 1 3 1 2 1 4 1 2 1 3 1 2 1 5 1 2 1 3 1 2 1 4 1 2 1 3 1 2 1]
+  </pre><a name="TOC_3" data-v-5890672a><h2 data-v-5890672a><strong data-v-5890672a>Self-application</strong></h2></a><p data-v-5890672a>
+    One way to get by without recursive definitions is by using Curry's "paradoxical"
+    Y combinator which can also be defined in Joy. Another way would use what is known
+    as "self-application", giving a function a parameter which is also a function -
+    e.g. itself. In Joy there is an inbuilt combinator to this effect, but it might
+    have been defined by
+  <pre data-v-5890672a>        DEFINE
+              x == dup i.
+  </pre>
+  Using this combinator a non-recursive definition of the factorial function
+  is this:
+  <br data-v-5890672a><pre data-v-5890672a> DEFINE 
+        x-fact == 
+      [ [ pop null ] 
+        [ pop pop 1] 
+        [ [dup pred] dip x *] 
+        ifte ] 
+      x. 
+  </pre>
+  Here is a test, and keep in mind that because the definition of <kbd data-v-5890672a>x-fact</kbd>is not recursive, as a parameter to the <kbd data-v-5890672a>map</kbd> combinator instead of using
+  the quotation <kbd data-v-5890672a>[x-fact]</kbd> it would have been possible to use quotation of
+  the body of the definition.
+  <pre data-v-5890672a> [ 0 1 2 3 4 5 6 ]  [x-fact]  map. 
+  [1 1 2 6 24 120 720]
+  </pre><p data-v-5890672a>
+    In the recursive definition of the 91-function the recursive branch used a double
+    recursion. For a non-recursive version it is necessary to have a double self-call
+    with the x-combinator. Such a double call is useful elsewhere, so here we have
+    a definition:
+  <pre data-v-5890672a> DEFINE 
+        twice-x == 
+      dup [x] dip x. 
+  </pre>
+  Below is a non-recursive definition of the 91-function and the same test set
+  as before:
+  <br data-v-5890672a><pre data-v-5890672a> DEFINE 
+        x-mcc91 == 
+      [ [ pop 100 > ] 
+        [ pop 10 - ] 
+        [ [11 +] dip twice-x ] 
+        ifte ] 
+      x. 
+     
+    [ -7 42 99 100 101 102 345 ]  [x-mcc91]  map. 
+  [91 91 91 91 91 92 335]
+  </pre><p data-v-5890672a>
+    Exactly the same technique can be used to give a non-recursive definition of the
+    Ackermann function using th x-combinator. Only one row of the test matrix is used
+    here:
+  <pre data-v-5890672a> DEFINE 
+        x-ack == 
+      [ [ [ [pop pop null]  pop popd succ ] 
+          [ [pop null]  [pop pred 1] dip x ] 
+          [ [[dup pred swap] dip pred] dip twice-x ] ] 
+      cond ] 
+      x. 
+     
+    [ [3 0] [3 1] [3 2] [3 3] [3 4] [3 5] ]   [i x-ack]  map. 
+  [5 13 29 61 125 253]
+  </pre>
+  Whatever may be achieved with the x-combinator can also be achieved with the
+  less efficient but more familiar y-combinator, which needs to be defined first:
+  <pre data-v-5890672a> DEFINE
+        y ==
+      [dup cons] swoncat dup cons i;
+        twice-i ==
+      dup [i] dip i.
+    DEFINE
+        y-ack ==
+      [ [ [ [pop pop null]  pop popd succ ]
+          [ [pop null]  [pop pred 1] dip i ]
+          [ [[dup pred swap] dip pred] dip twice-i ] ]
+      cond ]
+      y.
+    
+    [ [3 0] [3 1] [3 2] [3 3] [3 4] [3 5] ]   [i y-ack]  map.
+  [5 13 29 61 125 253]
+  </pre><p data-v-5890672a>
+    Here is the non-recursive definition, using the x-combinator, of the function that
+    generates the hamiltonian path sequence on a hypercube, together with one of the
+    tests:
+    <br data-v-5890672a><pre data-v-5890672a> DEFINE 
+        x-hamilhyp == 
+      [ [ pop null ] 
+        [ pop pop ] 
+        [ dup [ [dup rollup pred] dip  x ] dip 
+          [dupd cons] dip 
+          [swap pred] dip  x ] 
+        ifte ] 
+      x. 
+     
+    []  5  x-hamilhyp. 
+  [1 2 1 3 1 2 1 4 1 2 1 3 1 2 1 5 1 2 1 3 1 2 1 4 1 2 1 3 1 2 1]
+  </pre><a name="TOC_4" data-v-5890672a><h2 data-v-5890672a><strong data-v-5890672a>Partially explicit recursion</strong></h2></a><p data-v-5890672a>
+    Nick Forde suggested writing the Ackermann function by using the linrec combinator
+    to achieve one recursion, and to use explicit recursion for the other. For reasons
+    that do not concern us here, his version computes the <em data-v-5890672a>converse</em> of the
+    text book definition. For that reason, in the tests below the call is to
+    <kbd data-v-5890672a>swap ack</kbd>:
+  <pre data-v-5890672a>  
+    DEFINE ack == (* I:n I:m -> I:a *) 
+        [ [ [0 =] [pop 1 +] ] 
+          [ [swap 0 =] [popd 1 - 1 swap] [] ] 
+          [ [dup rollup [1 -] dip] [swap 1 - ack] ] ] 
+        condlinrec. 
+     
+    [ [0 0] [0 1] [0 2] [0 3] [0 4] [0 5] ]   [i swap ack]  map  putln 
+    [ [1 0] [1 1] [1 2] [1 3] [1 4] [1 5] ]   [i swap ack]  map  putln 
+    [ [2 0] [2 1] [2 2] [2 3] [2 4] [2 5] ]   [i swap ack]  map  putln 
+    [ [3 0] [3 1] [3 2] [3 3] [3 4] [3 5] ]   [i swap ack]  map  putln 
+    [ [4 0]                               ]   [i swap ack]  map. 
+  [1 2 3 4 5 6] 
+  [2 3 4 5 6 7] 
+  [3 5 7 9 11 13] 
+  [5 13 29 61 125 253] 
+  [13]
+  </pre><p data-v-5890672a>
+    In the same style we may define the 91-function using only a partially recursive
+    definition:
+    <br data-v-5890672a><pre data-v-5890672a> DEFINE 
+        l-mcc91 == 
+      [ 100 > ] 
+      [ 10 - ] 
+      [ 11 + ] 
+      [ l-mcc91 ] 
+      linrec. 
+     
+    [ -7 42 99 100 101 102 345 ]  [l-mcc91]  map. 
+  [91 91 91 91 91 92 335]
+  </pre><p data-v-5890672a>
+    The following partially recursive definition of the Ackermann function also uses
+    just the explicitly recursive call in the quotation for the double recursion:
+  <pre data-v-5890672a> DEFINE 
+        clr-ack == 
+      [ [ [pop null]  [popd succ] ] 
+        [ [null]  [pop pred 1]  [] ] 
+        [ [[dup pred swap] dip pred]  [clr-ack] ] ] 
+      condlinrec. 
+     
+    [ [3 0] [3 1] [3 2] [3 3] [3 4] [3 5] ]   [i clr-ack]  map. 
+  [5 13 29 61 125 253]
+  </pre><p data-v-5890672a>
+    In the same style here is the partially recursive definition of the function for
+    the Hamiltonian path on a hypercube. But since there is only a two way branching,
+    the linrec combinator is used rather than the slightly more complex (and hence
+    more flexible) condlinrec combinator. Remember that the implicit recursion occures
+    between the third and fourth quotation.
+  <pre data-v-5890672a> DEFINE  
+        lr-hamilhyp == 
+      [ null ] 
+      [ pop ] 
+      [ dup rollup pred ] 
+      [ dupd cons swap pred lr-hamilhyp ] 
+      linrec. 
+     
+    []  5  lr-hamilhyp. 
+  [1 2 1 3 1 2 1 4 1 2 1 3 1 2 1 5 1 2 1 3 1 2 1 4 1 2 1 3 1 2 1]
+  </pre><p data-v-5890672a>
+    Using almost the same definition with only a small change we obtain a definition
+    for something seemingly quite different. In the following only the commented line
+    has been inserted. The definition generates Gray sequences of subsets of small
+    numbers. Each subset is generated from its predecessor by having just one number
+    added or removed. This step is here done by an operation called <em data-v-5890672a>toggle</em>,
+    which takes a set of small numbers and another small number as parameters and returns
+    a set. If the number was in the original set then it is removed, if the number
+    was not in the original set then it is added. Here is the definition and some examples:
+  <pre data-v-5890672a> DEFINE 
+        toggle ==   #   {..} i  ->  {..] 
+      [has]  [[not] dip swons not]  [swons]  ifte. 
+     
+    {}  4  toggle. 
+  {4}
+    {1 2 7}  2 toggle. 
+  {1 7}
+  </pre>
+  Here is the function which constructs Gray sequences, and three examples:
+  <br data-v-5890672a><pre data-v-5890672a> DEFINE 
+        lr-grayseq == 
+      [ null ] 
+      [ pop ] 
+      [ dup rollup pred ] 
+      [ dupd 
+        dup [first swap toggle] dip  # inserted line 
+        cons swap pred lr-grayseq ] 
+      linrec. 
+     
+    [{}]  3  lr-grayseq. 
+  [{3} {1 3} {1 2 3} {2 3} {2} {1 2} {1} {}]
+    [{3}]  3  lr-grayseq. 
+  [{} {1} {1 2} {2} {2 3} {1 2 3} {1 3} {3}]
+    [{1 2 3}]  3 lr-grayseq. 
+  [{1 2} {2} {} {1} {1 3} {3} {2 3} {1 2 3}]
+  </pre><a name="TOC_5" data-v-5890672a><h2 data-v-5890672a><strong data-v-5890672a>A nested recursion combinator</strong></h2></a><p data-v-5890672a>
+    Nested recursion occurs not only in contrived functions like the Ackermann function
+    and the 91-function, but also in some others. Since one of the aims of Joy is to
+    emphasise common patterns, a new recursion combinator called <kbd data-v-5890672a>condnestrec</kbd>  was added to Joy. It resembles the <kbd data-v-5890672a>condlinrec</kbd> combinator in that it
+    takes just one parameter which is a list of cases. Each case is a list, all but
+    the last have a quoted test predicate as their first element. All other elements
+    in a case list are again quotations. But whereas <kbd data-v-5890672a>condlinrec</kbd> allows at
+    most two other quotations, <kbd data-v-5890672a>condnestrec</kbd> allows any number. For both combinators
+    an implicit recursion occurs between any consecutive other quotations.
+  <p data-v-5890672a>
+    Here is the example for the Hamiltonian path on a hypercube. Note that the parameter
+    to the combinator is a list of just two cases. The first case consists of a test
+    quotation and another quotation, so there is no recursion here. The second case
+    is also the last, so it is the default, and it has no test quotation. There are
+    three quotations, so the implicit recursion occurs between them, so it occurs twice.
+  <pre data-v-5890672a> DEFINE 
+        cnr-hamilhyp == 
+      [ [ [null] [pop] ] 
+        [ [dup rollup pred] 
+          [dupd cons swap pred] 
+          [] ] ] 
+      condnestrec. 
+     
+    [] 4 cnr-hamilhyp. 
+  [1 2 1 3 1 2 1 4 1 2 1 3 1 2 1]
+  </pre><p data-v-5890672a>
+    In the following definition of the Ackermann function implicit recursion occurs once
+    in the second case, and twice in the third, default case. In each of the three
+    places the quotation following the implicit recursion is actually empty.
+  <pre data-v-5890672a> DEFINE 
+        cnr-ack == 
+      [ [ [pop null]  [popd succ] ] 
+        [ [null]  [pop pred 1]  [] ] 
+        [ [[dup pred swap] dip pred]  []  [] ] ] 
+      condnestrec. 
+     
+    3 4 cnr-ack. 
+  125
+  </pre><p data-v-5890672a>
+    The program for Gray sequences is again obtained from the one for the Hamiltonian
+    path on a hypercube by inserting one line as indicated:
+  <pre data-v-5890672a> DEFINE 
+        cnr-grayseq == 
+      [ [ [null]  [pop] ] 
+        [ [dup rollup pred] 
+          [dupd 
+           dup [first swap toggle] dip # inserted 
+           cons swap pred] 
+          [] ] ] 
+      condnestrec. 
+     
+    [{}] 3 cnr-grayseq. 
+  [{3} {1 3} {1 2 3} {2 3} {2} {1 2} {1} {}]
+  </pre><p data-v-5890672a>
+    Since the Hamiltonian path sequence is also the sequence of the disk numbers in the
+    Hanoi problem, it is perhaps not too surprising that the solution to the Hamoi
+    problem is so similar. The solution of course has to specify the pegs: each move
+    has to specify from which peg the top disk is to be removed and to which peg it
+    is to be moved. However, the number of the disk is not normally mentioned. In the
+    following program the number of the disk directs the recursion just as in the Hamiltonian
+    problem, but the number of the disk does not appear in the output.
+  <p data-v-5890672a>
+    In this particular version of the program the user specifies a list of the names
+    of the three pegs, and the number of disks on the first peg. The disks on the first
+    peg are to be moved to the peg whose name is the second on the list, and the peg
+    whose name is the third item can be used as a temporary. The user chose to call
+    the pegs "source" "destination" and "temp" in the first example, and "S" "D" and
+    "T" in the second example.
+  <pre data-v-5890672a> DEFINE 
+        cnr-hanoi == 
+      [[rolldown] infra] dip 
+      [ [ [null] [pop pop] ] 
+        [ [dup2 [[rotate] infra] dip pred] 
+          [ [dup rest put] dip 
+            [[swap] infra] dip pred ] 
+          [] ] ] 
+      condnestrec. 
+     
+    [source destination temp]  2  cnr-hanoi. 
+  [source temp] [source destination] [temp destination]
+    [S D T]  5  cnr-hanoi. 
+  [S D] [S T] [D T] [S D] [T S] [T D] [S D] [S T] [D T] [D S] [T S] [D T] [S D] [S T] [D T] [S D] [T S] [T D] [S D] [T S] [D T] [D S] [T S] [T D] [S D] [S T] [D T] [S D] [T S] [T D] [S D]      
+  </pre>
+  It is interesting to note that although the Gray sequence program and the
+  Hanoi program are based on the same program, the Hamiltonian path program, the Gray
+  sequence produced consists of 2^n members and the Hanoi move sequence consists of
+  (2^n)-1 members.
+  <p data-v-5890672a>
+    Since this note started with the recursive definitions of the factorial function
+    and the 91-function, This section would not be complete without the corresponding
+    definitions using the <em data-v-5890672a>condnestrec</em> combinator:
+    <br data-v-5890672a><pre data-v-5890672a> DEFINE 
+        cnr-fact == 
+      [ [ [null] [pop 1] ] 
+        [ [dup pred] [*] ] ] 
+      condnestrec; 
+     
+        cnr-mcc91 == 
+      [ [ [100 >] [10 -] ] 
+        [ [11 +] [] [] ] ] 
+      condnestrec. 
+     
+    [ 0 1 2 3 4 5 6 ]  [cnr-fact]  map. 
+  [1 1 2 6 24 120 720]
+    [ -7 42 99 100 101 102 345 ]  [cnr-mcc91]  map. 
+  [91 91 91 91 91 92 335]
+  </pre><p data-v-5890672a>
+    In fact, <kbd data-v-5890672a>condnestrec</kbd> is a veritable swiss army knife combinator. In
+    the following definitions of the <kbd data-v-5890672a>even</kbd> predicate and the <kbd data-v-5890672a>abs</kbd>  (absolute value) operator,
+    <kbd data-v-5890672a>condlinrec</kbd> is used just for conditionals without making use of the possibility
+    of recursion. For the <kbd data-v-5890672a>abs</kbd> operator the default is actually empty.
+  <pre data-v-5890672a> DEFINE 
+        cnr-even == 
+      [ [ [2 rem null] [pop true] ] 
+        [ [pop false] ] ] 
+      condnestrec; 
+     
+        cnr-abs == 
+      [ [ [0 &lt;] [0 swap -] ] 
+        [ [] ] ] 
+      condnestrec. 
+     
+    3 cnr-even. 
+  false
+    4 cnr-even. 
+  true
+    -5 cnr-abs. 
+  5
+    6 cnr-abs. 
+  6
+  </pre><p data-v-5890672a>
+    The use of nested recursion in Joy has not yet been explored beyond these examples.
+    All the examples took a numeric parameter to guide the recursion, and one obvious
+    alternative to investigate is the use of lists.
+  <p data-v-5890672a>
+    MYNOTE: Bauer and Woessner, functions ble and morris. Manna, Ackermann for strings.
+  </article></div></main><footer data-v-c785faa8><p data-v-c785faa8><a href="https://github.com/joy-language/joy-lang.org" data-v-c785faa8>GitHub</a></footer></div></div></div><script type="text/javascript">window.__NUXT__={layout:"default",data:[{},{}],error:null,serverRendered:!0}</script><script defer src="/_nuxt/manifest.10669f42b2e188f55eb1.js"></script><script defer src="/_nuxt/layouts/default.29c0e08e13310e3682fc.js"></script><script defer src="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js"></script><script defer src="/_nuxt/pages/papers-on-joy/nested-recursion-and-a-new-recursion-combinator.d40eac9bf6ad0e5cac92.js"></script><script defer src="/_nuxt/vendor.230cb916d1973aa790f3.js"></script><script defer src="/_nuxt/app.0a856c7cf6fb3e349fa2.js"></script>
+  
+

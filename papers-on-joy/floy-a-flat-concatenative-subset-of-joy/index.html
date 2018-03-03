@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html data-n-head="" data-n-head-ssr>
+  <head>
+    <meta data-n-head="true" charset="utf-8"><meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport"><meta data-n-head="true" content="Joy Programming Language" name="description" data-hid="description"><title data-n-head="true">Joy language</title><link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,500|Roboto:400|Roboto+Mono:400" rel="stylesheet" data-n-head="true"><link href="/favicon.ico" rel="icon" data-n-head="true" type="image/x-icon"><link href="/favicon.ico?" rel="shortcut icon" data-n-head="true" type="image/x-icon"><link href="/_nuxt/manifest.10669f42b2e188f55eb1.js" rel="preload" as="script"><link href="/_nuxt/vendor.230cb916d1973aa790f3.js" rel="preload" as="script"><link href="/_nuxt/app.0a856c7cf6fb3e349fa2.js" rel="preload" as="script"><link href="/_nuxt/layouts/default.29c0e08e13310e3682fc.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/floy-a-flat-concatenative-subset-of-joy.9162d7b51e29e1b5b1b9.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/survey-of-reproducing-programs.ed8409adcfb2bdec6eeb.js" rel="prefetch"><link href="/_nuxt/pages/libraries-and-c-sources.d2ffa370ff989df9d359.js" rel="prefetch"><link href="/_nuxt/pages/index.73b5e04f9a3fcda5b5fe.js" rel="prefetch"><link href="/_nuxt/pages/about.a3431c5910b96e7d0298.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-algebra-of-joy.7f385b55e84045676f24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-annoying-quadratic-formula.a3d9ef30d4f74df89dfd.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/church-arithmetic-and-church-logic-with-brent-kirby.e11588a1a251690d41af.js" rel="prefetch"><link href="/_nuxt/pages/rationale-for-joy.3e067852511f512169f0.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/tutorial-on-joy.9a4df70c3d63708c2b23.js" rel="prefetch"><link href="/_nuxt/pages/overview-of-joy.8733ad0cbce5d065d604.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/miscellaneous-miniature-implementations-of-joy.417498df53623dd27f3a.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/fast-small-truth-tables.9b1b75741215fa7afac3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/programming-in-joy.d4bc3bc57b9855085dc1.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/design-of-matrix-multiplication-programs.8e00ebe2e6e430523681.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/imperative-thinking-for-joy-programs.223ec58c271bc7112421.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/design-of-a-joy-interpreter-written-in-joy.eaa748fa0ea2130e1164.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/joy-compared-with-other-functional-languages.e9b1e34a3b81758a64f2.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/recursion-theory-and-joy.7d268252a6e6c71fa9f2.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/nested-recursion-and-a-new-recursion-combinator.d40eac9bf6ad0e5cac92.js" rel="prefetch"><link href="/_nuxt/pages/faq.9ffdbd52d27b2df75f94.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/mathematical-foundations-of-joy.4f0b584e560cf803bb24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/html-manual.e3473b0453170639a088.js" rel="prefetch"><link href="/_nuxt/pages/faq-part-2.9630745e3aaebc47633f.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/lazy-lists-as-reproducing-programs.9516d2d5134cfed90ce3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-current-implementation.e033c23017443bc35c24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/a-rewriting-system-for-joy.4157d6f1ef190fb675ea.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/atomic-programs-of-joy.f2cb1414ae2b6ed9401e.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/prospectus-for-john-cowans-joy1.cb4661329c1ed2df6752.js" rel="prefetch"><style data-vue-ssr-id="d505b096:0">html{font-family:Roboto,Arial,sans-serif;margin:0;font-weight:400;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-box-sizing:border-box;box-sizing:border-box}body{margin:0;height:100%}:after,:before,:not(pre){-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}.wrapper{min-height:calc(100vh - 102px)}a{color:#3273dc;text-decoration:none}a:hover{text-decoration:underline}</style><style data-vue-ssr-id="6cc65792:0">nav[data-v-251e63b6]{background-color:#000}ul[data-v-251e63b6]{list-style-type:none;padding:0;margin:0}li[data-v-251e63b6]{-webkit-transition:all .2s ease-out;transition:all .2s ease-out;display:inline-block;padding:0;cursor:pointer}li[data-v-251e63b6]:hover{-webkit-transform:scale(1.04);transform:scale(1.04);background-color:#fff;color:#000}li a[data-v-251e63b6]{display:block;padding:15px 25px;text-decoration:none;color:#fff;text-align:center}li:hover a[data-v-251e63b6]{color:#000}.nuxt-link-exact-active[data-v-251e63b6]{text-decoration:overline}</style><style data-vue-ssr-id="23d2604d:0">h1[data-v-7e83a563]{font-size:26px}.lists[data-v-7e83a563]{margin-top:37px;padding-left:12vw;padding-right:12vw}.top-list-item[data-v-7e83a563]{margin-top:11px}li[data-v-7e83a563]{line-height:39px}.no-style-litem[data-v-7e83a563]{list-style-type:none}ul[data-v-7e83a563]{list-style-type:circle}h6[data-v-7e83a563]{font-size:17px}p[data-v-7e83a563]{margin-top:8px;line-height:24px;font-size:16px}</style><style data-vue-ssr-id="477ac568:0">p[data-v-45765aad]{margin-top:16px;margin-bottom:16px}hr[data-v-45765aad]{margin-bottom:16px}pre[data-v-45765aad]{margin-bottom:auto}code[data-v-45765aad],kbd[data-v-45765aad],pre[data-v-45765aad]{font-family:Roboto Mono,monospace}</style><style data-vue-ssr-id="ca9343dc:0">footer[data-v-c785faa8]{padding:11px 20px 0;height:52px}p[data-v-c785faa8]{-webkit-transition:all .1s ease-in;transition:all .1s ease-in;font-size:15px;float:right;margin:0 16px}a[data-v-c785faa8]{color:#000;text-decoration:none}p[data-v-c785faa8]:hover{-webkit-transform:scale(.94);transform:scale(.94);color:#000;-webkit-text-decoration:#3273dc overline;text-decoration:#3273dc overline}</style>
+  </head>
+  <body data-n-head="">
+    <div id="__nuxt" data-server-rendered="true"><div id="__layout"><div class="container" lang="en"><nav data-v-251e63b6 role="navigation"><ul data-v-251e63b6><li data-v-251e63b6><a href="/" data-v-251e63b6 class="nuxt-link-active">Home</a><li data-v-251e63b6><a href="/papers-on-joy" data-v-251e63b6 class="nuxt-link-active">Papers</a><li data-v-251e63b6><a href="/libraries-and-c-sources" data-v-251e63b6>Libraries/C sources</a><li data-v-251e63b6><a href="/about" data-v-251e63b6>About</a></ul></nav><main class="lists" data-v-7e83a563><div data-v-7e83a563><article data-v-45765aad data-v-7e83a563 data-v-7e83a563>
+  9 - NOV - 2005
+  <p data-v-45765aad>
+    Abstract: There is a subset of Joy in which quotations contain at most one
+    element and nesting of quotations is not allowed.For every Joy program
+    there is a corresponding program in this subset, and when the
+    corresponding program is executed, the original is restored.A translation
+    from full Joy to the subset can be written in full Joy(and,
+    if one wanted to, also in the subset itself).
+  <p data-v-45765aad>
+    In most high level programming languages programs contain nested
+    structures, typically in conditionals and loops.Nested structures also
+    arise in data as in nested arrays or nested lists.Concatenative languages
+    such as Forth, Joy, Slava Pestov 's Factor, and Stevan Apters'
+    s cK and XY
+    are no exception.But nesting interrupts the concatenative semantics: a
+    concatenative program must treat a quotation, a contained nested program,
+    as an indivisible unit, but when the quotation is executed by a
+    combinator, its concatenative semantics unfolds.In the "concatenative"
+    mailing group Billy Tanksley raised the question whether it would be
+    possible to design a concatenative language without nesting, a flat
+    concatenative language.
+  <p data-v-45765aad>
+    The written representation of programs in any language consists of
+    a sequencce of symbols which themselves are sequences of characters.
+    The characters are collected by a scanner or tokeniser to form symbols,
+    and the symbols are examined by a parser to form a syntax tree and by
+    the compiler to form a program which typically is nested.Note that the
+    sequence of symbbols is not nested, but it contains some special
+    symbols such as brackets and IF, THEN, WHILE...These symbols
+    direct the compiler to buils the nested structures.So one can think
+    of the sequencce of symbols as a program that is executed by the compiler
+    and produces an internal nested structure.Surprisingly the sequence
+    of symbols constitutes a flat concatenative language.The compiler
+    computes a
+    function, and so does the interpreter.Hence the composition
+    of the compiler and the interpreter is an interpreter
+    for a flat concatenative
+    language.
+  <p data-v-45765aad>
+    Stevan Apter has adopted this principle in his web page <a href="http://www.nsl.com/k/xy/xy.htm" data-v-45765aad> http: //www/nsl.com/k/xy/xy.htm</a>. There he
+    uses his concatenative language XY to write a proof - of - concept implementation
+    for a
+    flat concatenative language.The XY language uses a stack X, like all concatenative
+    languages, but also a queue Y.It so happens that this arrangement is suitable
+    implementing a flat concatenative language.Essentially it works by compiling the
+    flat input language to form quotations prior to every execution.So the compilation
+    is done by the XY interpreter, and the result is then again interpreted by XY.The
+    alternative solution offered in the remainder of this note borrows some of these
+    ideas.Instead of a queue Y an ordinary Joy list is used.The flat input language is
+    actually a subset of Joy.
+  <p data-v-45765aad>
+    Let Floy("FLat jOY") be that subet of Joy in which quotations are not
+    allowed to contain more than one atom.This means that[][3][dup][ * ]
+    and[map] are allowed, but[[]][1 2 3][
+    [3]
+    ][dup * ] and[[map]] are not.
+    The aim of this note is to demonstrate the following theorem about Joy:
+  <pre data-v-45765aad>        For every Joy program J
+  there is a Floy program F which
+  constructs the quotation[J] of the Joy program J:
+    F = >
+  [J]
+  and hence F i == [J] i == J </pre>
+  The proof uses a technique commonly used in the theory of computability:
+  One shows that there is a translation
+  function T such that T(J) = F.The
+  translation
+  function is computable, so the proof is constructive.The
+  translation could be computed by a program in any Turing complete
+  language.
+  <p data-v-45765aad>
+    Joy is Turing complete, so the translation
+    function from Joy to Floy can be written
+    in Joy itself.Let j2f be a Joy program which takes the quotation[J] of a Joy
+    program J as a parameter and produces the quotation[F] of the corresponding Floy
+    program F.Note that the quotation[F] itself will in general not be a Floy program
+    .
+    The translation program j2f must satisy:
+  <pre data-v-45765aad>                 [J] j2f      ==  [F]
+  and hence[J] j2f i == [F] i == [J]
+  and[J] j2f i i == [F] i i == [J] i == J </pre>
+  From the second line above[J] j2f i == [J] and hence j2f i == id.So j2f
+  is the left inverse of i, and i is the right inverse of j2f.
+  <p data-v-45765aad>
+    The quotation[F] of the Floy program F, when executed by i, has to
+    reconstruct the quotation[J] of the Joy program J, including all internal
+    quotations of J which may b nested.There are two ways in which these
+    quotations can be constructed by F.Both must begin with the empty
+    quotation[].Then, in the forward direcction, start with the first,
+    second..item and append them in that order to the quotation so far.
+    Alternatively, in the reverse direction, start with the last, second - last
+    ..item and prepend them in that order to the quotation so far.Since
+    there are two ways in which a Floy program could operate, there are in
+    fact two possible Floy programs corresponding to a given Joy program.And,
+    for sheer perversity, a Floy program could use a mixture of these two
+    strategies.But such mixtures wil not be further considered here.The
+    forward or backward versions can be constructed by two different
+    Joy - to - Floy programs, j2f - forwards and j2f - reverse.Both Joy - to - Floy
+    programs traverse the original Joy quotation[J] and any of its internal
+    quotations in the forward direction.Both start building[F] as an empty
+    quotation[].Then j2f - forwards starts at the first, second..item of[J]
+    or its internal quotation to build[F] in the forward direction, so that
+    when[F] is ever executed by the i combinator, it will reconstruct[J] in
+    the forward direction.On the other hand, j2f - reverse also starts at the
+    first, second..item to build[F] in the reverse direction, so that when[F] is ever executed by i,
+    it will reconstruct[J] in the reverse
+    direction.Is your head spinning yet ? So was mine when writing the code.
+  <p data-v-45765aad>
+    The remainder of this note consists of the separately commented output
+    flatjoy.out from running flatjoy.joy.The first definitions define four
+    quoted Joy programs that will later be used to test the two Joy - to - Floy
+    translators.The first is the program that does nothing, the second
+    contains some actual code without nesting, the third has two occurrances
+    of one level of nesting, and the fourth has two occurrances of two levels. 
+  <pre data-v-45765aad>  DEFINE 
+  P0 == [];#
+  empty code
+  P1 == [2 3 + dup * ];#
+  non - empty code
+  P2 == [
+    [1 2 3][dup * ] map
+  ];#
+  nest data &
+  code
+  P3 == [
+    [
+      [1 2][3 4][5][]
+    ][
+      [dup * ] map
+    ] map
+  ].#double nesting </pre><p data-v-45765aad>
+    Next comes the definition of j2f - forwards and its subsidiaries.The
+    forward version[F] has to use a lot of concatenation, so the first
+    definition abbreviates concat to c.The second definition is
+    for j2f - f, a
+    recursive operator, the real workhorse.If the item to be translated is a
+    list, then do some preparation, step recursively through the list, and
+    then do some finalisation.The preparation consists of appending an empty
+    list to what has been constructed so far, and the finalisation consists of
+    appending code which, when executed by i, will append the unit list of the
+    reconstructed list to the partially reconstructed[J].On the other hand,
+    if the item is not a list, but an atom foo, build code and append code
+    which, when executed by i, will append foo to the partially reconstructed
+    [J].The final definition is
+    for j2f - forwards, which must provide an empty
+    starting list[] and then step through[J] by calling j2f - f. 
+  <pre data-v-45765aad> DEFINE 
+  c == concat;
+  j2f - f == [list]
+    [
+      [
+        [
+          []
+        ] concat
+      ] dip[j2f - f] step[[] cons c] concat
+    ]
+    [
+      [] cons[c] cons concat
+    ]
+  ifte;
+  j2f - forwards == [
+    []
+  ] swap[j2f - f] step. </pre><p data-v-45765aad>
+    The following are the tests.For each of P0..P3, we see the original
+    quoted Joy program[J], then its translation[F] by j2f - forwards, then the
+    result of executing this by the i combinator to
+    yield the original[J].
+    For each of P1..P3 we also see the result of executing this by a further i
+    combinator.In[F], remember that c is short
+    for concat. 
+  <pre data-v-45765aad>  P0 .  []
+
+  P0 j2f - forwards.
+    [
+      []
+    ]
+
+  P0 j2f - forwards i.
+    []
+
+  P1.
+    [2 3 + dup * ]
+
+  P1 j2f - forwards.
+    [
+      [][2] c[3] c[+] c[dup] c[ * ] c
+    ]
+
+  P1 j2f - forwards i.
+    [2 3 + dup * ]
+
+  P1 j2f - forwards i i.
+  25
+
+  P2.
+    [
+      [1 2 3][dup * ] map
+    ]
+
+  P2 j2f - forwards.
+    [
+      [][][1] c[2] c[3] c[] cons c[][dup] c[ * ] c[] cons c[map] c
+    ]
+
+  P2 j2f - forwards i.
+    [
+      [1 2 3][dup * ] map
+    ]
+
+  P2 j2f - forwards i i.
+    [1 4 9]
+
+  P3.
+    [
+      [
+        [1 2][3 4][5][]
+      ][
+        [dup * ] map
+      ] map
+    ]
+
+  P3 j2f - forwards.
+    [
+      [][][][1] c[2] c[] cons c[][3] c[4] c[] cons c[][5] c[] cons c[][]
+      cons c[] cons c[][][dup] c[ * ] c[] cons c[map] c[] cons c[map] c
+    ]
+
+  P3 j2f - forwards i.
+    [
+      [
+        [1 2][3 4][5][]
+      ][
+        [dup * ] map
+      ] map
+    ]
+
+  P3 j2f - forwards i i.
+    [
+      [1 4][9 16][25][]
+    ] </pre><p data-v-45765aad>
+    The Floy programs so constructed are almost readable, and with some
+    practice one might even learn to write that way -
+    if one really had to.
+    But there is something
+    else that is unsatisfactory.On inspecting the code
+    for j2f - f and the translations that it produces, we see that both use a
+    lot of concatenations: j2f - f uses concat directly, and the translations
+    use the abbreviation c, which will be executed when the translation is
+    executed by the i combinator.In both cases the concatenation serves to
+    append a quite short list to another list which might already be quite
+    long.But that means that the other longer list has to be copied entirely
+    to have the short list as its new tail.This is inefficient, and a better
+    solution would be to work the other way, so that a short list is prepended
+    rather than appended.
+  <p data-v-45765aad>
+    The following definition
+    for translator j2f - reverse addresses the problem.
+    From a given Joy program[J] it constructs in reverse an equivalent Floy
+    program[F] which when executed by the i combinator reconstructs in
+    reverse the original Joy program[J].Instead of c
+    for concat, define s
+    for swoncat, to be used inside the translation[F].The workhorse is
+    j2f - r.If the item is a list do some preparation, recursively step through
+    the list and then do some finalisation.Finalisation consists in
+    prepending[] to the[F] built so far, it will be the starting point when
+    the completed[F] is executed by i.Preparation consists in prepending to[F] code which when executed i will prepend the constructed quotation to
+    the partially rebuilt[J].If the item is not a list but say foo,
+    construct and prepend code which when executed by i, will prepend foo.The
+    final j2f - reverse has to provide an inital empty list[] and after
+    stepping through[J] prepend another empty list to that. 
+  <pre data-v-45765aad>  DEFINE 
+  s == swoncat;
+  j2f - r == [list]
+    [
+      [
+        [swons] swoncat
+      ] dip[j2f - r] step[] swons
+    ]
+    [
+      [] cons[s] cons swoncat
+    ]
+  ifte;
+  j2f - reverse == [] swap[j2f - r] step[] swons. </pre><p data-v-45765aad>
+    The tests
+    for j2f - reverse are the same as
+    for j2f - forwards: Show[J], then
+    translate to
+    yield [F], then i the translation to reconstruct[J], and
+    where appropriate, i the reconstruction. 
+  <pre data-v-45765aad> P0 .  []
+
+  P0 j2f - reverse.
+    [
+      []
+    ]
+
+  P0 j2f - reverse i.
+    []
+
+  P1.
+    [2 3 + dup * ]
+
+  P1 j2f - reverse.
+    [
+      [][ * ] s[dup] s[+] s[3] s[2] s
+    ]
+
+  P1 j2f - reverse i.
+    [2 3 + dup * ]
+
+  P1 j2f - reverse i i.
+  25
+
+  P2.
+    [
+      [1 2 3][dup * ] map
+    ]
+
+  P2 j2f - reverse.
+    [
+      [][map] s[][ * ] s[dup] s swons[][3] s[2] s[1] s swons
+    ]
+
+  P2 j2f - reverse i.
+    [
+      [1 2 3][dup * ] map
+    ]
+
+  P2 j2f - reverse i i.
+    [1 4 9]
+
+  P3.
+    [
+      [
+        [1 2][3 4][5][]
+      ][
+        [dup * ] map
+      ] map
+    ]
+
+  P3 j2f - reverse.
+    [
+      [][map] s[][map] s[][ * ] s[dup] s swons swons[][] swons[][5] s swons[][4]
+      s[3] s swons[][2] s[1] s swons swons
+    ]
+
+  P3 j2f - reverse i.
+    [
+      [
+        [1 2][3 4][5][]
+      ][
+        [dup * ] map
+      ] map
+    ]
+
+  P3 j2f - reverse i i.
+    [
+      [1 4][9 16][25][]
+    ] </pre>
+  As may be seen, the reverse Floy programs are much harder to read and write
+  when one
+  's mindset is for postfix notation. Finally, I could not resist flattening 
+  the already flattened:
+  <pre data-v-45765aad> #Double flattening - an exercise in Joy obfuscation:
+    P3 j2f - forwards j2f - reverse.
+    [
+      [][c] s[][map] s swons[c] s[cons] s[] swons[c] s[][map] s swons[c] s[cons] s[] swons[
+        c] s[][ * ] s swons[c] s[][dup] s swons[] swons[] swons[c] s[cons] s[] swons[
+        c] s[cons] s[] swons[] swons[c] s[cons] s[] swons[c] s[]
+      [5] s swons[] swons[c] s[cons] s[] swons[c] s[][4] s swons[c] s[][3] s
+      swons[] swons[c] s[cons] s[] swons[c] s[][2] s swons[c] s[][1] s swons[]
+      swons[] swons[] swons
+    ]
+
+  # partial de - obfuscation - by Joy itself:
+    P3 j2f - forwards j2f - reverse i.
+    [
+      [][][][1] c[2] c[] cons c[][3] c[4] c[] cons c[][5] c[] cons c[][] cons c[] cons c[]
+      [][dup] c[ * ] c[] cons c[map] c[] cons c[map] c
+    ]
+
+  # full de - obfuscation - again by Joy:
+    P3 j2f - forwards j2f - reverse i i.
+  gc - 191 nodes inspected, 126 nodes copied, clock: 1[[
+    [1 2][3 4][5][]
+  ][
+    [dup * ] map
+  ] map]
+
+  # final run of de - obfuscated original:
+    P3 j2f - forwards j2f - reverse i i i.
+    [
+      [1 4][9 16][25][]
+    ] </pre><p data-v-45765aad>
+    This ends the output file <a href="flatjoy.out" data-v-45765aad> flatjoy.out </a> 
+    from running the source file
+    <a href="flatjoy.joy" data-v-45765aad> flatjoy.joy</a>.
+    The definitions of the two translators j2f - forwards and j2f - backwards
+    have been added in slightly modified form to the
+    Joy library
+    for symbolic manipulation, <a href="basic-libraries/symlib.joy" data-v-45765aad> symlib.joy</a>.
+  <p data-v-45765aad>
+    Here again is the theorem already mentioned at the beginning:
+  <pre data-v-45765aad>        For every Joy program J
+  there is a Floy program F which
+  constructs the quotation[J] of the Joy program J:
+    F = > 
+  [J]
+  and hence F i == [J] i == J </pre>
+  The proof is by induction on the structure of the Joy program J, using
+  either of the two Joy - to - Floy translators just shown.A informal version
+  of the proof is as follows: The base
+  case is
+  for the quoted empty program[];
+  the two tests
+  for P0 have demonstrated the correctness of the
+  translators.For the induction on the length of the program without any
+  internal quotations, the two tests
+  for P1 have demonstrated the
+  correctness.For the induction on the depth of nested quotations, the two
+  tests
+  for each of P2 and P3 demonstrate the correctness.A more formal
+  proof would need to proceed by analysing the actual code
+  for the
+  translators and even of the implementation of Joy, but this is outside the
+  scope of this note.
+  <p data-v-45765aad>
+    The translations into the two versions of Floy contain many occurrances
+    of unitlists of the form[foo], each followed by a c(
+    for concat) in
+    the forward version, or by a s(
+    for swoncat) in the reverse version.
+    It might be thought that unitlists already
+    break the ideal of flatness.
+    For Joy as it is, there seems to be no other solution.But the syntax
+    of Joy could be extended by adding unary operators in prefix notation.
+    Two kinds of solutions suggest themselves:
+  <p data-v-45765aad>
+    Writing say Q
+    for one such operator, Q foo would be the same as[foo].
+    Then
+    for the forward and reverse versions of Floy one might write
+    Q foo concat, or Q foo swoncat.Then one might combine the quoting operator
+    with the concat or swoncat in two other unary operators C or S, and then
+    writing C foo, or S foo.
+  <p data-v-45765aad>
+    The other kind of solution would introduce an operator F, so that F foo
+    would be the same as[foo] first, with the effect of pushing foo onto the
+    stack.Then concat or swoncat would have to be replaced by append and
+    prepend, possibly by combined unary operators A and P, and then writing A
+    foo, or P foo.
+  <p data-v-45765aad>
+    Similar unary operators have been suggested before in different contexts
+    for different purposes.But such a major addition to the syntax does not
+    sit so well with the ideal of simple concatenativity, and no such addition
+    is currently planned
+    for Joy.However, it may so turn out that compelling
+    arguments
+    for additional syntax will emerge in the future. 
+  </article></div></main><footer data-v-c785faa8><p data-v-c785faa8><a href="https://github.com/joy-language/joy-lang.org" data-v-c785faa8>GitHub</a></footer></div></div></div><script type="text/javascript">window.__NUXT__={layout:"default",data:[{},{}],error:null,serverRendered:!0}</script><script defer src="/_nuxt/manifest.10669f42b2e188f55eb1.js"></script><script defer src="/_nuxt/layouts/default.29c0e08e13310e3682fc.js"></script><script defer src="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js"></script><script defer src="/_nuxt/pages/papers-on-joy/floy-a-flat-concatenative-subset-of-joy.9162d7b51e29e1b5b1b9.js"></script><script defer src="/_nuxt/vendor.230cb916d1973aa790f3.js"></script><script defer src="/_nuxt/app.0a856c7cf6fb3e349fa2.js"></script>
+  
+

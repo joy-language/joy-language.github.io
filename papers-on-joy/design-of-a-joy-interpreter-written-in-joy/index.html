@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html data-n-head="" data-n-head-ssr>
+  <head>
+    <meta data-n-head="true" charset="utf-8"><meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport"><meta data-n-head="true" content="Joy Programming Language" name="description" data-hid="description"><title data-n-head="true">Joy language</title><link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,500|Roboto:400|Roboto+Mono:400" rel="stylesheet" data-n-head="true"><link href="/favicon.ico" rel="icon" data-n-head="true" type="image/x-icon"><link href="/favicon.ico?" rel="shortcut icon" data-n-head="true" type="image/x-icon"><link href="/_nuxt/manifest.10669f42b2e188f55eb1.js" rel="preload" as="script"><link href="/_nuxt/vendor.230cb916d1973aa790f3.js" rel="preload" as="script"><link href="/_nuxt/app.0a856c7cf6fb3e349fa2.js" rel="preload" as="script"><link href="/_nuxt/layouts/default.29c0e08e13310e3682fc.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/design-of-a-joy-interpreter-written-in-joy.eaa748fa0ea2130e1164.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/survey-of-reproducing-programs.ed8409adcfb2bdec6eeb.js" rel="prefetch"><link href="/_nuxt/pages/libraries-and-c-sources.d2ffa370ff989df9d359.js" rel="prefetch"><link href="/_nuxt/pages/index.73b5e04f9a3fcda5b5fe.js" rel="prefetch"><link href="/_nuxt/pages/about.a3431c5910b96e7d0298.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-algebra-of-joy.7f385b55e84045676f24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-annoying-quadratic-formula.a3d9ef30d4f74df89dfd.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/church-arithmetic-and-church-logic-with-brent-kirby.e11588a1a251690d41af.js" rel="prefetch"><link href="/_nuxt/pages/rationale-for-joy.3e067852511f512169f0.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/tutorial-on-joy.9a4df70c3d63708c2b23.js" rel="prefetch"><link href="/_nuxt/pages/overview-of-joy.8733ad0cbce5d065d604.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/miscellaneous-miniature-implementations-of-joy.417498df53623dd27f3a.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/fast-small-truth-tables.9b1b75741215fa7afac3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/programming-in-joy.d4bc3bc57b9855085dc1.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/design-of-matrix-multiplication-programs.8e00ebe2e6e430523681.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/imperative-thinking-for-joy-programs.223ec58c271bc7112421.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/joy-compared-with-other-functional-languages.e9b1e34a3b81758a64f2.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/recursion-theory-and-joy.7d268252a6e6c71fa9f2.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/nested-recursion-and-a-new-recursion-combinator.d40eac9bf6ad0e5cac92.js" rel="prefetch"><link href="/_nuxt/pages/faq.9ffdbd52d27b2df75f94.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/mathematical-foundations-of-joy.4f0b584e560cf803bb24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/floy-a-flat-concatenative-subset-of-joy.9162d7b51e29e1b5b1b9.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/html-manual.e3473b0453170639a088.js" rel="prefetch"><link href="/_nuxt/pages/faq-part-2.9630745e3aaebc47633f.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/lazy-lists-as-reproducing-programs.9516d2d5134cfed90ce3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-current-implementation.e033c23017443bc35c24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/a-rewriting-system-for-joy.4157d6f1ef190fb675ea.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/atomic-programs-of-joy.f2cb1414ae2b6ed9401e.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/prospectus-for-john-cowans-joy1.cb4661329c1ed2df6752.js" rel="prefetch"><style data-vue-ssr-id="d505b096:0">html{font-family:Roboto,Arial,sans-serif;margin:0;font-weight:400;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-box-sizing:border-box;box-sizing:border-box}body{margin:0;height:100%}:after,:before,:not(pre){-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}.wrapper{min-height:calc(100vh - 102px)}a{color:#3273dc;text-decoration:none}a:hover{text-decoration:underline}</style><style data-vue-ssr-id="6cc65792:0">nav[data-v-251e63b6]{background-color:#000}ul[data-v-251e63b6]{list-style-type:none;padding:0;margin:0}li[data-v-251e63b6]{-webkit-transition:all .2s ease-out;transition:all .2s ease-out;display:inline-block;padding:0;cursor:pointer}li[data-v-251e63b6]:hover{-webkit-transform:scale(1.04);transform:scale(1.04);background-color:#fff;color:#000}li a[data-v-251e63b6]{display:block;padding:15px 25px;text-decoration:none;color:#fff;text-align:center}li:hover a[data-v-251e63b6]{color:#000}.nuxt-link-exact-active[data-v-251e63b6]{text-decoration:overline}</style><style data-vue-ssr-id="23d2604d:0">h1[data-v-7e83a563]{font-size:26px}.lists[data-v-7e83a563]{margin-top:37px;padding-left:12vw;padding-right:12vw}.top-list-item[data-v-7e83a563]{margin-top:11px}li[data-v-7e83a563]{line-height:39px}.no-style-litem[data-v-7e83a563]{list-style-type:none}ul[data-v-7e83a563]{list-style-type:circle}h6[data-v-7e83a563]{font-size:17px}p[data-v-7e83a563]{margin-top:8px;line-height:24px;font-size:16px}</style><style data-vue-ssr-id="6cb0e0fd:0">p[data-v-72df85dd]{margin-top:16px;margin-bottom:16px}hr[data-v-72df85dd]{margin-bottom:16px}pre[data-v-72df85dd]{margin-bottom:auto}code[data-v-72df85dd],kbd[data-v-72df85dd],pre[data-v-72df85dd]{font-family:Roboto Mono,monospace}</style><style data-vue-ssr-id="ca9343dc:0">footer[data-v-c785faa8]{padding:11px 20px 0;height:52px}p[data-v-c785faa8]{-webkit-transition:all .1s ease-in;transition:all .1s ease-in;font-size:15px;float:right;margin:0 16px}a[data-v-c785faa8]{color:#000;text-decoration:none}p[data-v-c785faa8]:hover{-webkit-transform:scale(.94);transform:scale(.94);color:#000;-webkit-text-decoration:#3273dc overline;text-decoration:#3273dc overline}</style>
+  </head>
+  <body data-n-head="">
+    <div id="__nuxt" data-server-rendered="true"><div id="__layout"><div class="container" lang="en"><nav data-v-251e63b6 role="navigation"><ul data-v-251e63b6><li data-v-251e63b6><a href="/" data-v-251e63b6 class="nuxt-link-active">Home</a><li data-v-251e63b6><a href="/papers-on-joy" data-v-251e63b6 class="nuxt-link-active">Papers</a><li data-v-251e63b6><a href="/libraries-and-c-sources" data-v-251e63b6>Libraries/C sources</a><li data-v-251e63b6><a href="/about" data-v-251e63b6>About</a></ul></nav><main class="lists" data-v-7e83a563><div data-v-7e83a563><article data-v-72df85dd data-v-7e83a563 data-v-7e83a563><i data-v-72df85dd> by Manfred von Thun</i><p data-v-72df85dd>
+    This short paper contains the design of a Joy interpreter written in Joy itself.
+  <p data-v-72df85dd>
+    Let L1 and L2 be two languages. An interpreter for language L1 , written in language
+    L2 is a program P which takes as a parameter any program written in L1 and executes
+    it in the same way as a processor for L1 would have. If the two languages are the
+    same language L , such an interpreter is called <em data-v-72df85dd>metacircular</em>. Languages
+    in which <em data-v-72df85dd>program = data</em> make it particularly easy to write an interpreter
+    in its own language. The best known example is the <em data-v-72df85dd>Lisp</em> interpreter <code data-v-72df85dd>eval</code>.
+    A metacircular interpreter for Joy can also be written.
+  <p data-v-72df85dd>
+    The remainder of this paper assumes some familiarity with Joy.
+  <h1 data-v-72df85dd> A Joy interpreter written in Joy </h1><p data-v-72df85dd>
+    A Joy interpreter in Joy is a program which expects a quoted program on top of the
+    stack and executes it. The following is the design of Joy interpreter <kbd data-v-72df85dd>joy</kbd>  written in Joy itself. The first version of the interpreter is merely a reminder
+    that Joy already has a combinator, the <code data-v-72df85dd>i</code> combinator, which removes
+    a program from the top of the stack and executes it.
+  <pre data-v-72df85dd> 
+  joy  ==  i 
+  </pre><p data-v-72df85dd>
+    The next version makes explicit the fact that Joy programs are sequences which are
+    executed by <kbd data-v-72df85dd>step</kbd>ping through the members of the sequence. For each
+    member in the sequence an appropriate action is taken. The <code data-v-72df85dd>step</code> combinator
+    will indiscriminately leave literals, operators and combinators on top of the stack.
+    But any operators and combinators <em data-v-72df85dd>on top of the stack</em> cannot actually
+    be executed. However, their <kbd data-v-72df85dd>unitlist</kbd> can be executed by the <kbd data-v-72df85dd>i</kbd>  combinator. So this is the next version of the interpreter:
+  <pre data-v-72df85dd> 
+  joy  == 
+          [ unitlist 
+            i ] 
+          step 
+  </pre><p data-v-72df85dd>
+    The last interpreter does not actually <em data-v-72df85dd>specify</em> what is to be done what
+    a particular element of the sequence has appeared on top of the stack. A better
+    one should say things like this for the <em data-v-72df85dd>operator</em>s:
+  <pre data-v-72df85dd>If the top element is "+" 
+      then pop off the "+" and add the two numbers below 
+  If the top element is "rest" 
+      then pop off the "rest" and take the rest of the aggregate below 
+  </pre>
+  For the <em data-v-72df85dd>literal</em>s it is even simpler:
+  <pre data-v-72df85dd>If the top element is any number 
+      then leave it there and do not do anything 
+  If the top number is any list 
+      then leave it there and do not do anything 
+  </pre>
+  Essentially we need a way of examining what is on top of the stack and executing
+  the appropriate action. So in the previous version of the interpreter we must replace
+  the <code data-v-72df85dd>unitlist</code> by something more specific. It has to consist of several
+  cases, for the various literals, operators and combinators. The <kbd data-v-72df85dd>opcase</kbd>operator
+  is suitable for just that. It expects any kind of item on top of the stack, and above
+  that a list of cases. Each case is a list consisting of a test item and a (possibly)
+  empty rest. The effect of the <code data-v-72df85dd>opcase</code>operator is to remove the top item
+  and the list of cases, and to leave behind the rest of case for which the item matched
+  the test item. The last case in the list is the default, it does not have a test
+  item. The default is returned if there was no match. For the present design step
+  the default does nothing. The following is what has to replace the <code data-v-72df85dd>unitlist</code>in the interpreter:
+  <pre data-v-72df85dd> 
+        [ [ 0 ]                           (* sample number *) 
+          [ [] ]                          (* sample list *) 
+          [ + pop + ]                     (* addition operator *) 
+          [ rest pop rest ]               (* rest operator *) 
+          [ ] ]                           (* default, do nothing *) 
+        opcase 
+  </pre>
+  It is an easy matter to add the other cases for <em data-v-72df85dd>literal</em>s. They have
+  to be treated just like numbers and list:
+  <pre data-v-72df85dd> 
+          [ 'A ]                          (* sample character *) 
+          [ true ]                        (* sample truth value *) 
+          [ "" ]                          (* sample string *) 
+          [ {} ]                          (* sample set *) 
+  </pre>
+  Similarly, other operators have to be added such as
+  <pre data-v-72df85dd> 
+          [ swap pop swap ]               (* swap operator *) 
+          [ cons pop cons ]               (* cons operator *) 
+  </pre><p data-v-72df85dd>
+    For the combinators it is tempting to treat them just like operators:
+  <pre data-v-72df85dd> 
+          [ dip pop dip ]                 (* dip combinator - WRONG *) 
+          [ map pop map ]                 (* map combinator - WRONG *) 
+  </pre>
+  This will work correctly, but it just uses the Joy system
+  <em data-v-72df85dd>inside</em> the quoted program that is being called by
+  <code data-v-72df85dd>i</code> or <code data-v-72df85dd>map</code>. Instead it should use the Joy-in-Joy interpreter
+  that we are writing. To achieve that effect, the program parameter <code data-v-72df85dd>[P]</code>for the combinator has to be replaced by <code data-v-72df85dd>[[P] joy]</code>. For <code data-v-72df85dd>i</code>,
+  <code data-v-72df85dd>dip</code> and <code data-v-72df85dd>map</code> and other <em data-v-72df85dd>unary combinator</em>s this is
+  quite easy: after the <code data-v-72df85dd>pop</code> execute <code data-v-72df85dd>[joy] cons</code>. This gives
+  cases like the following:
+  <pre data-v-72df85dd> 
+          [ i    pop [joy] cons  i   ]    (* i combinator *) 
+          [ dip  pop [joy] cons  dip ]    (* dip combinator *) 
+          [ map  pop [joy] cons  map ]    (* map combinator *) 
+  </pre>
+  The case for the <code data-v-72df85dd>i</code> combinator is unnecessarily inefficient, it
+  could be optimised to
+  <pre data-v-72df85dd> 
+          [ i    pop             joy ]    (* i combinator *) 
+  </pre>
+  However, for uniformity this optimisation will not be used here.
+  <p data-v-72df85dd>
+    So that we do not lose track, here is the interpreter as designed so far:
+  <pre data-v-72df85dd> 
+  joy  ==                                 (* literals *) 
+      [ [ [ 0    ] 
+          [ []   ] 
+          [ true ] 
+          [ 'A   ] 
+          [ ""   ] 
+          [ {}   ] 
+                                          (* operators *) 
+          [ +             pop     +    ] 
+          [ rest          pop     rest ] 
+          [ dup           pop     dup  ] 
+          [ swap          pop     swap ] 
+          [ pop           pop     pop  ] 
+          [ -             pop     -    ] 
+          [ and           pop     and  ] 
+          [ cons          pop     cons ] 
+                                          (* unary combinators *) 
+          [ i             pop [joy] cons    i      ] 
+          [ dip           pop [joy] cons    dip    ] 
+          [ map           pop [joy] cons    map    ] 
+          [ filter        pop [joy] cons    filter ] 
+          [ ] ]                           (* provisional default *) 
+        opcase 
+        i ] 
+      step 
+  </pre><p data-v-72df85dd>
+    The interpreter is getting close to its final shape now, but several things need
+    to be fixed. Obviously the <em data-v-72df85dd>binary combinator</em>s have to be treated in
+    a way that is similar to the unary ones: The two program parameters <code data-v-72df85dd>[P]</code>  and
+    <code data-v-72df85dd>[Q]</code> have to be replaced by <code data-v-72df85dd>[[P] joy]</code> and <code data-v-72df85dd>[[Q] joy]</code>.
+    This is best done by using the <kbd data-v-72df85dd>app2</kbd> combinator as follows:
+  <pre data-v-72df85dd> 
+          [[joy] cons]  app2 
+  </pre>
+  So for the binary combinators the cases look like this:
+  <pre data-v-72df85dd> 
+                                          (* binary combinators *) 
+          [ branch        pop [[joy] cons] app2   branch ] 
+          [ cleave        pop [[joy] cons] app2   cleave ] 
+  </pre>
+  For the <em data-v-72df85dd>ternary combinator</em>s and <em data-v-72df85dd>quaternary combinator</em>s the
+  pattern is much the same, there are now three or four program parameters that need
+  to be modified. This is easily done using the <kbd data-v-72df85dd>app3</kbd>and <kbd data-v-72df85dd>app4</kbd>combinators to effect the modification.
+  <pre data-v-72df85dd> 
+                                          (* ternary combinators *) 
+          [ ifte          pop [[joy] cons] app3   ifte ] 
+                                          (* quaternary combinators *) 
+          [ linrec        pop [[joy] cons] app4   linrec ] 
+          [ binrec        pop [[joy] cons] app4   binrec ] 
+  </pre><p data-v-72df85dd>
+    There are still two major amendments needed for the interpreter. The first concerns
+    user defined symbols as they might occur in the standard library, the personal
+    library or in the preamble to a particular run. All Joy symbols have an internal
+    tag, and the tags differ individually only for the operators and combinators. However,
+    <em data-v-72df85dd>all</em> numbers have the same internal tag,
+    <em data-v-72df85dd>all</em> characters have the same tag,
+    <em data-v-72df85dd>all</em> lists have the same tag and so on. Similarly <em data-v-72df85dd>all</em> defined
+    symbols have the same tag. The
+    <code data-v-72df85dd>opcase</code> operator looks at these tags, so all that is needed is one
+    new case for user defined symbols. Just as any number will do as the prototype
+    for numbers, so any user defined symbol will do as the prototype for defined symbols.
+    We might as well choose "joy". When a defined symbol has been encountered, it is
+    necessary to find its definition, which is the program that constitutes the body
+    of that definition. The <kbd data-v-72df85dd>body</kbd> operator will find that, it expects a user
+    defined symbol on top of the stack and returns the defining program in quoted form.
+    The Joy interpreter now has to execute this. But it is essential that the Joy interpreter
+    should execute inside that quotation. So it will not do to use the <code data-v-72df85dd>i</code>  combinator, but the <code data-v-72df85dd>joy</code> interpreter itself has to be used. Hence the
+    case for user defined symbols is just
+  <pre data-v-72df85dd> 
+          [ joy           body joy ] 
+  </pre>
+  The single most common case will be the call of a defined atom rather than
+  an inbuilt one. To improve efficiency this case (with <code data-v-72df85dd>joy</code>) is placed
+  to the front of the caselist.
+  <p data-v-72df85dd>
+    It always possible that the interpreter is used for programs which contain operators
+    or combinators that are part of the language (not used defined) but have not been
+    given cases in the interpreter itself, either intentionally or through neglect.
+    The joy interpreter should be able to perform reasonably for those operators and
+    combinators. So this is where the default clause for the <code data-v-72df85dd>opcase</code>  operator comes in handy. When none of the listed case apply, treat the symbol as
+    we did in the second version of the interpreter: take the <code data-v-72df85dd>unitlist</code>  and use the <code data-v-72df85dd>i</code> combinator to execute that. Instead of using <code data-v-72df85dd>unitlist</code>  it is better to use its definition <code data-v-72df85dd>[] cons</code>. So the default clause
+    looks like this:
+  <pre data-v-72df85dd> 
+          [               [] cons i ]     (* default *) 
+  </pre><p data-v-72df85dd>
+    This completes the working design of the interpreter. The following is its structure
+    with the last two additions written out fully:
+  <pre data-v-72df85dd> 
+  joy  == 
+      [ [ [ joy           body joy ]      (* user defined *) 
+          ...                             (* literals *) 
+          ...                             (* operators *) 
+          ...                             (* unary combinators *) 
+          ...                             (* binary combinators *) 
+          ...                             (* ternary combinators *) 
+          ...                             (* quaternary combinators *) 
+          [               [] cons i ] ]   (* default *) 
+        opcase 
+        i ] 
+      step 
+  </pre><p data-v-72df85dd>
+    Before we write out a more complete version of the interpreter, it is useful to make
+    a number of changes to the design.
+  <p data-v-72df85dd>
+    Firstly, the cases for the combinators of various arities contain common code which
+    is repeated again and again. The interpreter becomes more readable if such instances
+    are factored out and defined separately. There are cases for unary, binary, ternary
+    and quaternary combinators, and for each of these the common code will be called
+    <code data-v-72df85dd>cr1</code>, <code data-v-72df85dd>cr2</code>, <code data-v-72df85dd>cr3</code> and <code data-v-72df85dd>cr4</code>. For
+    uniformity the code for <code data-v-72df85dd>cr1</code> is assimilated to that of the others,
+    using <kbd data-v-72df85dd>app1</kbd>. Since they are not likely to be wanted anywhere else, their
+    definitions are given inside a <kbd data-v-72df85dd>HIDE</kbd> declaration.
+  <p data-v-72df85dd>
+    Secondly, it could be useful if the default case does its job not silently but traces
+    out each symbol that it hands over to the Joy system. Such symbols are <code data-v-72df85dd>dup</code>licated
+    and then written out by <kbd data-v-72df85dd>put</kbd>. This now makes the default case
+  <pre data-v-72df85dd> 
+          [               dup put [] cons i ] 
+  </pre><p data-v-72df85dd>
+    The interpreter <kbd data-v-72df85dd>joy</kbd> now looks like this:
+  <pre data-v-72df85dd> 
+  HIDE 
+    cr1  ==  pop [[joy] cons] app1; 
+    cr2  ==  pop [[joy] cons] app2; 
+    cr3  ==  pop [[joy] cons] app3; 
+    cr4  ==  pop [[joy] cons] app4 
+  IN 
+    joy  == 
+      [ [ [ joy           body    joy       ] 
+          [ []                              ] 
+          [ 0                               ] 
+          ... 
+          [ dup           pop     dup       ] 
+          [ +             pop     +         ] 
+          [ cons          pop     cons      ] 
+          [ put           pop     put       ] 
+          ... 
+          [ i             cr1     i         ] 
+          [ dip           cr1     dip       ] 
+          [ map           cr1     map       ] 
+          [ filter        cr1     filter    ] 
+          [ app1          cr1     app1      ] 
+          [ app2          cr1     app2      ] 
+          ... 
+          [ ifte          cr3     ifte      ] 
+          [ linrec        cr4     linrec    ] 
+          [ binrec        cr4     binrec    ] 
+          ... 
+          [               dup put [] cons i ] ] 
+        opcase 
+        i ] 
+      step 
+  END 
+  </pre><p data-v-72df85dd>
+    The interpreter has appropriate cases for all literals and for quite a few operators
+    and combinators. Most operators and combinators are still missing and will therefore
+    be handled by the default clause. However, it is straightforward to make the interpreter
+    more comprehensive and even complete.
+  <p data-v-72df85dd>
+    It is of some interest to write an interpreter that is just adequate to interpret
+    itself and leaves everything else to the default clause. The following is the minimal
+    Joy interpreter <kbd data-v-72df85dd>joy0</kbd>; for variety it uses the optimisation for the
+    <code data-v-72df85dd>i</code> combinator mentioned earlier.
+  <pre data-v-72df85dd> 
+  joy0  == 
+      [ [ [ joy0          body            joy0     ] 
+          [ []                                     ] 
+          [ pop           pop             pop      ] 
+          [ cons          pop             cons     ] 
+          [ opcase        pop             opcase   ] 
+          [ body          pop             body     ] 
+          [ i             pop             joy0     ] 
+          [ step          pop [joy0] cons step     ] 
+          [               [] cons         i        ] ] 
+        opcase 
+        i ] 
+      step 
+  </pre><p data-v-72df85dd>
+    The two versions <kbd data-v-72df85dd>joy</kbd> and <kbd data-v-72df85dd>joy0</kbd> are in the file
+    <a href="jp-joyjoy.joy" data-v-72df85dd> Joy in Joy </a>.
+  </article></div></main><footer data-v-c785faa8><p data-v-c785faa8><a href="https://github.com/joy-language/joy-lang.org" data-v-c785faa8>GitHub</a></footer></div></div></div><script type="text/javascript">window.__NUXT__={layout:"default",data:[{},{}],error:null,serverRendered:!0}</script><script defer src="/_nuxt/manifest.10669f42b2e188f55eb1.js"></script><script defer src="/_nuxt/layouts/default.29c0e08e13310e3682fc.js"></script><script defer src="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js"></script><script defer src="/_nuxt/pages/papers-on-joy/design-of-a-joy-interpreter-written-in-joy.eaa748fa0ea2130e1164.js"></script><script defer src="/_nuxt/vendor.230cb916d1973aa790f3.js"></script><script defer src="/_nuxt/app.0a856c7cf6fb3e349fa2.js"></script>
+  
+

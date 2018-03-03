@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html data-n-head="" data-n-head-ssr>
+  <head>
+    <meta data-n-head="true" charset="utf-8"><meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport"><meta data-n-head="true" content="Joy Programming Language" name="description" data-hid="description"><title data-n-head="true">Joy language</title><link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,500|Roboto:400|Roboto+Mono:400" rel="stylesheet" data-n-head="true"><link href="/favicon.ico" rel="icon" data-n-head="true" type="image/x-icon"><link href="/favicon.ico?" rel="shortcut icon" data-n-head="true" type="image/x-icon"><link href="/_nuxt/manifest.10669f42b2e188f55eb1.js" rel="preload" as="script"><link href="/_nuxt/vendor.230cb916d1973aa790f3.js" rel="preload" as="script"><link href="/_nuxt/app.0a856c7cf6fb3e349fa2.js" rel="preload" as="script"><link href="/_nuxt/layouts/default.29c0e08e13310e3682fc.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/html-manual.e3473b0453170639a088.js" rel="preload" as="script"><link href="/_nuxt/pages/papers-on-joy/survey-of-reproducing-programs.ed8409adcfb2bdec6eeb.js" rel="prefetch"><link href="/_nuxt/pages/libraries-and-c-sources.d2ffa370ff989df9d359.js" rel="prefetch"><link href="/_nuxt/pages/index.73b5e04f9a3fcda5b5fe.js" rel="prefetch"><link href="/_nuxt/pages/about.a3431c5910b96e7d0298.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-algebra-of-joy.7f385b55e84045676f24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-annoying-quadratic-formula.a3d9ef30d4f74df89dfd.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/church-arithmetic-and-church-logic-with-brent-kirby.e11588a1a251690d41af.js" rel="prefetch"><link href="/_nuxt/pages/rationale-for-joy.3e067852511f512169f0.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/tutorial-on-joy.9a4df70c3d63708c2b23.js" rel="prefetch"><link href="/_nuxt/pages/overview-of-joy.8733ad0cbce5d065d604.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/miscellaneous-miniature-implementations-of-joy.417498df53623dd27f3a.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/fast-small-truth-tables.9b1b75741215fa7afac3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/programming-in-joy.d4bc3bc57b9855085dc1.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/design-of-matrix-multiplication-programs.8e00ebe2e6e430523681.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/imperative-thinking-for-joy-programs.223ec58c271bc7112421.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/design-of-a-joy-interpreter-written-in-joy.eaa748fa0ea2130e1164.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/joy-compared-with-other-functional-languages.e9b1e34a3b81758a64f2.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/recursion-theory-and-joy.7d268252a6e6c71fa9f2.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/nested-recursion-and-a-new-recursion-combinator.d40eac9bf6ad0e5cac92.js" rel="prefetch"><link href="/_nuxt/pages/faq.9ffdbd52d27b2df75f94.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/mathematical-foundations-of-joy.4f0b584e560cf803bb24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/floy-a-flat-concatenative-subset-of-joy.9162d7b51e29e1b5b1b9.js" rel="prefetch"><link href="/_nuxt/pages/faq-part-2.9630745e3aaebc47633f.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/lazy-lists-as-reproducing-programs.9516d2d5134cfed90ce3.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/the-current-implementation.e033c23017443bc35c24.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/a-rewriting-system-for-joy.4157d6f1ef190fb675ea.js" rel="prefetch"><link href="/_nuxt/pages/papers-on-joy/atomic-programs-of-joy.f2cb1414ae2b6ed9401e.js" rel="prefetch"><link href="/_nuxt/pages/c-sources/prospectus-for-john-cowans-joy1.cb4661329c1ed2df6752.js" rel="prefetch"><style data-vue-ssr-id="d505b096:0">html{font-family:Roboto,Arial,sans-serif;margin:0;font-weight:400;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-box-sizing:border-box;box-sizing:border-box}body{margin:0;height:100%}:after,:before,:not(pre){-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}.wrapper{min-height:calc(100vh - 102px)}a{color:#3273dc;text-decoration:none}a:hover{text-decoration:underline}</style><style data-vue-ssr-id="6cc65792:0">nav[data-v-251e63b6]{background-color:#000}ul[data-v-251e63b6]{list-style-type:none;padding:0;margin:0}li[data-v-251e63b6]{-webkit-transition:all .2s ease-out;transition:all .2s ease-out;display:inline-block;padding:0;cursor:pointer}li[data-v-251e63b6]:hover{-webkit-transform:scale(1.04);transform:scale(1.04);background-color:#fff;color:#000}li a[data-v-251e63b6]{display:block;padding:15px 25px;text-decoration:none;color:#fff;text-align:center}li:hover a[data-v-251e63b6]{color:#000}.nuxt-link-exact-active[data-v-251e63b6]{text-decoration:overline}</style><style data-vue-ssr-id="23d2604d:0">h1[data-v-7e83a563]{font-size:26px}.lists[data-v-7e83a563]{margin-top:37px;padding-left:12vw;padding-right:12vw}.top-list-item[data-v-7e83a563]{margin-top:11px}li[data-v-7e83a563]{line-height:39px}.no-style-litem[data-v-7e83a563]{list-style-type:none}ul[data-v-7e83a563]{list-style-type:circle}h6[data-v-7e83a563]{font-size:17px}p[data-v-7e83a563]{margin-top:8px;line-height:24px;font-size:16px}</style><style data-vue-ssr-id="17d353ee:0">p[data-v-238d98fc]{margin-top:16px;margin-bottom:16px}hr[data-v-238d98fc]{margin-bottom:16px}pre[data-v-238d98fc]{margin-bottom:auto}code[data-v-238d98fc],kbd[data-v-238d98fc],pre[data-v-238d98fc]{font-family:Roboto Mono,monospace}</style><style data-vue-ssr-id="ca9343dc:0">footer[data-v-c785faa8]{padding:11px 20px 0;height:52px}p[data-v-c785faa8]{-webkit-transition:all .1s ease-in;transition:all .1s ease-in;font-size:15px;float:right;margin:0 16px}a[data-v-c785faa8]{color:#000;text-decoration:none}p[data-v-c785faa8]:hover{-webkit-transform:scale(.94);transform:scale(.94);color:#000;-webkit-text-decoration:#3273dc overline;text-decoration:#3273dc overline}</style>
+  </head>
+  <body data-n-head="">
+    <div id="__nuxt" data-server-rendered="true"><div id="__layout"><div class="container" lang="en"><nav data-v-251e63b6 role="navigation"><ul data-v-251e63b6><li data-v-251e63b6><a href="/" data-v-251e63b6 class="nuxt-link-active">Home</a><li data-v-251e63b6><a href="/papers-on-joy" data-v-251e63b6 class="nuxt-link-active">Papers</a><li data-v-251e63b6><a href="/libraries-and-c-sources" data-v-251e63b6>Libraries/C sources</a><li data-v-251e63b6><a href="/about" data-v-251e63b6>About</a></ul></nav><main class="lists" data-v-7e83a563><div data-v-7e83a563><article data-v-238d98fc data-v-7e83a563 data-v-7e83a563>
+  JOY - compiled at 16: 57: 51 on Mar 17 2003(BDW) Copyright 2001 by Manfred von Thun
+  <title data-v-238d98fc> The Joy Programming Language - By Manfred Von Thun </title><dl data-v-238d98fc>
+    literal
+    <dt data-v-238d98fc> truth value type <code data-v-238d98fc> : </code> ->  B <dd data-v-238d98fc> The logical type, or the type of truth values
+      .It has just two literals: true and false.
+    <dt data-v-238d98fc> character type <code data-v-238d98fc>      :  </code> ->
+      C
+    <dd data-v-238d98fc> The type of characters.Literals are written with a single quote.Examples: 'A '
+      7 '; and so on. Unix style
+      escapes are allowed.
+    <dt data-v-238d98fc> integer type <code data-v-238d98fc>      :  </code> ->
+      I
+    <dd data-v-238d98fc> The type of negative, zero or positive integers.Literals are written in decimal notation.Examples:
+      -123 0
+      42.
+    <dt data-v-238d98fc> set type <code data-v-238d98fc>      :  </code> -> {...
+      } 
+    <dd data-v-238d98fc> The type of sets of small non - negative integers.The maximum is platform dependent,
+      typically the range is
+      0..31. Literals are written inside curly braces.Examples: {} {
+      0
+      } {
+      1 3 5
+      } {
+      19 18 17
+      }.
+    <dt data-v-238d98fc> string type <code data-v-238d98fc>      :  </code> ->
+      "..." 
+    <dd data-v-238d98fc> The type of strings of characters.Literals are written inside double quotes.Examples: ""
+      "A"
+      "hello world"
+      "123".Unix style escapes are accepted.
+    <dt data-v-238d98fc> list type <code data-v-238d98fc>      :  </code> ->
+      [...] 
+    <dd data-v-238d98fc> The type of lists of values of any type(including lists), or the type of quoted programs which may contain
+      operators or combinators.Literals of this type are written inside square brackets.Examples: [][3 512 - 7]
+      [john mary]['A '
+      C['B]] [dup *].
+    <dt data-v-238d98fc> float type <code data-v-238d98fc>      :  </code> -> F <dd data-v-238d98fc> The type of floating - point numbers
+      .Literals of this type are written with embedded decimal points(like 1.2) and optional exponent specifiers(
+      like 1.5E2)
+    <dt data-v-238d98fc> file type <code data-v-238d98fc>      :  </code> -> FILE:
+    <dd data-v-238d98fc> The type of references to open I / O streams, typically but not necessarily files.The only literals of this type are stdin,
+      stdout, and stderr.operand
+    <dt data-v-238d98fc>false <code data-v-238d98fc>      :  </code> -> false <dd data-v-238d98fc> Pushes the value false.
+    <dt data-v-238d98fc>true <code data-v-238d98fc>      :  </code> -> true <dd data-v-238d98fc> Pushes the value true.
+    <dt data-v-238d98fc>maxint <code data-v-238d98fc>      :  </code> -> maxint <dd data-v-238d98fc> Pushes largest integer(platform dependent)
+      .Typically it is 32 bits.
+    <dt data-v-238d98fc>setsize <code data-v-238d98fc>      :  </code> -> setsize <dd data-v-238d98fc> Pushes the maximum number of elements in
+      a set(platform dependent).Typically it is 32, and set members are in the range 0..31.
+    <dt data-v-238d98fc>stack <code data-v-238d98fc>      :  </code> ..X Y Z ->..X Y Z[Z Y X..] <dd data-v-238d98fc> Pushes the stack as a list
+      .
+    <dt data-v-238d98fc>conts <code data-v-238d98fc>      :  </code> ->
+      [
+      [P][Q]..
+      ] 
+    <dd data-v-238d98fc> Pushes current continuations.Buggy, do not use.
+    <dt data-v-238d98fc>autoput <code data-v-238d98fc>      :  </code> - &
+      gt; I 
+    <dd data-v-238d98fc> Pushes current value of flag
+      for automatic output, I = 0..2.
+    <dt data-v-238d98fc>undeferror <code data-v-238d98fc>      :  </code> -> I <dd data-v-238d98fc> Pushes current value of undefined -
+      is - error flag.
+    <dt data-v-238d98fc>undefs <code data-v-238d98fc>      :  </code> -> <dd data-v-238d98fc> Push a list of all undefined symbols in
+      the current symbol table.
+    <dt data-v-238d98fc>echo <code data-v-238d98fc>      :  </code> -> I <dd data-v-238d98fc> Pushes value of echo flag, I = 0..3.
+    <dt data-v-238d98fc>clock <code data-v-238d98fc>      :  </code> -> I <dd data-v-238d98fc> Pushes the integer value of current CPU usage in
+      hundreds of a second.
+    <dt data-v-238d98fc>time <code data-v-238d98fc>      :  </code> -> I <dd data-v-238d98fc> Pushes the current time( in seconds since the Epoch)
+      .
+    <dt data-v-238d98fc>rand <code data-v-238d98fc>      :  </code> -> I <dd data-v-238d98fc> I is a random integer.
+    <dt data-v-238d98fc>stdin <code data-v-238d98fc>      :  </code> -> S <dd data-v-238d98fc> Pushes the standard input stream.
+    <dt data-v-238d98fc>stdout <code data-v-238d98fc>      :  </code> -> S <dd data-v-238d98fc> Pushes the standard output stream.
+    <dt data-v-238d98fc>stderr <code data-v-238d98fc>      :  </code> -> S <dd data-v-238d98fc> Pushes the standard error stream.operator
+    <dt data-v-238d98fc>id <code data-v-238d98fc>      :  </code> -> <dd data-v-238d98fc> Identity
+      function, does nothing.Any program of the form P id Q is equivalent to just P Q.
+    <dt data-v-238d98fc>dup <code data-v-238d98fc>      :  </code> X -> X X <dd data-v-238d98fc> Pushes an extra copy of X onto stack.
+    <dt data-v-238d98fc>swap <code data-v-238d98fc>      :  </code> X Y -> Y X <dd data-v-238d98fc> Interchanges X and Y on top of the stack
+      .
+    <dt data-v-238d98fc>rollup <code data-v-238d98fc>      :  </code> X Y Z -> Z X Y <dd data-v-238d98fc> Moves X and Y up, moves Z down
+    <dt data-v-238d98fc>rolldown <code data-v-238d98fc>      :  </code> X Y Z -> Y Z X <dd data-v-238d98fc> Moves Y and Z down, moves X up
+    <dt data-v-238d98fc>rotate <code data-v-238d98fc>      :  </code> X Y Z -> Z Y X <dd data-v-238d98fc> Interchanges X and Z
+    <dt data-v-238d98fc>popd <code data-v-238d98fc>      :  </code> Y Z -> Z <dd data-v-238d98fc> As
+      if defined by: popd == [pop] dip
+    <dt data-v-238d98fc>dupd <code data-v-238d98fc>      :  </code> Y Z -> Y Y Z <dd data-v-238d98fc> As
+      if defined by: dupd == [dup] dip
+    <dt data-v-238d98fc>swapd <code data-v-238d98fc>      :  </code> X Y Z -> Y X Z <dd data-v-238d98fc> As
+      if defined by: swapd == [swap] dip
+    <dt data-v-238d98fc>rollupd <code data-v-238d98fc>      :  </code> X Y Z W -> Z X Y W <dd data-v-238d98fc> As
+      if defined by: rollupd == [rollup] dip
+    <dt data-v-238d98fc>rolldownd <code data-v-238d98fc>      :  </code> X Y Z W -> Y Z X W <dd data-v-238d98fc> As
+      if defined by: rolldownd == [rolldown] dip
+    <dt data-v-238d98fc>rotated <code data-v-238d98fc>      :  </code> X Y Z W -> Z Y X W <dd data-v-238d98fc> As
+      if defined by: rotated == [rotate] dip
+    <dt data-v-238d98fc>pop <code data-v-238d98fc>      :  </code> X -> <dd data-v-238d98fc> Removes X from top of the stack.
+    <dt data-v-238d98fc>choice <code data-v-238d98fc>      :  </code> B T F -> X <dd data-v-238d98fc> If B is true, then X = T
+      else X = F.
+    <dt data-v-238d98fc>or <code data-v-238d98fc>      :  </code> X Y -> Z <dd data-v-238d98fc> Z is the union of sets X and Y,
+      logical disjunction
+      for truth values.
+    <dt data-v-238d98fc>xor <code data-v-238d98fc>      :  </code> X Y -> Z <dd data-v-238d98fc> Z is the symmetric difference of sets X and Y,
+      logical exclusive disjunction
+      for truth values.
+    <dt data-v-238d98fc>and <code data-v-238d98fc>      :  </code> X Y -> Z <dd data-v-238d98fc> Z is the intersection of sets X and Y,
+      logical conjunction
+      for truth values.
+    <dt data-v-238d98fc>not <code data-v-238d98fc>      :  </code> X -> Y <dd data-v-238d98fc> Y is the complement of set X, logical negation
+      for truth values.
+    <dt data-v-238d98fc>+ <code data-v-238d98fc>      :  </code> M I -> N <dd data-v-238d98fc> Numeric N is the result of adding integer I to numeric M
+      .Also supports float.
+    <dt data-v-238d98fc>- <code data-v-238d98fc>      :  </code> M I -> N <dd data-v-238d98fc> Numeric N is the result of subtracting integer I from numeric M
+      .Also supports float.
+    <dt data-v-238d98fc>* <code data-v-238d98fc>      :  </code> I J -> K <dd data-v-238d98fc> Integer K is the product of integers I and J
+      .Also supports float.
+    <dt data-v-238d98fc>/ <code data-v-238d98fc> : </code> I J  ->  K <dd data-v-238d98fc> Integer K is the(rounded) ratio of integers I and J
+      .Also supports float.
+    <dt data-v-238d98fc>rem <code data-v-238d98fc>      :  </code> I J -> K <dd data-v-238d98fc> Integer K is the remainder of dividing I by J
+      .Also supports float.
+    <dt data-v-238d98fc>div <code data-v-238d98fc>      :  </code> I J -> K L <dd data-v-238d98fc> Integers K and L are the quotient and remainder of dividing I by J
+      .
+    <dt data-v-238d98fc>sign <code data-v-238d98fc>      :  </code> N1 -> N2 <dd data-v-238d98fc> Integer N2 is the sign(-1 or 0 or +
+      1) of integer N1, or float N2 is the sign(-1.0 or 0.0 or 1.0) of float N1.
+    <dt data-v-238d98fc>neg <code data-v-238d98fc>      :  </code> I -> J <dd data-v-238d98fc> Integer J is the negative of integer I.Also supports float
+      .
+    <dt data-v-238d98fc>ord <code data-v-238d98fc>      :  </code> C -> I <dd data-v-238d98fc> Integer I is the Ascii value of character C(
+      or logical or integer).
+    <dt data-v-238d98fc>chr <code data-v-238d98fc>      :  </code> I -> C <dd data-v-238d98fc> C is the character whose Ascii value is integer I(
+      or logical or character).
+    <dt data-v-238d98fc>abs <code data-v-238d98fc>      :  </code> N1 -> N2 <dd data-v-238d98fc> Integer N2 is the absolute value(0, 1,
+      2..) of integer N1, or float N2 is the absolute value(0.0..) of float N1
+    <dt data-v-238d98fc>acos <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the arc cosine of F.
+    <dt data-v-238d98fc>asin <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the arc sine of F.
+    <dt data-v-238d98fc>atan <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the arc tangent of F.
+    <dt data-v-238d98fc>atan2 <code data-v-238d98fc>      :  </code> F G -> H <dd data-v-238d98fc> H is the arc tangent of F / G.
+    <dt data-v-238d98fc>ceil <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the float ceiling of F.
+    <dt data-v-238d98fc>cos <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the cosine of F.
+    <dt data-v-238d98fc>cosh <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the hyperbolic cosine of F.
+    <dt data-v-238d98fc>exp <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is e(2.718281828...) raised to the Fth power
+      .
+    <dt data-v-238d98fc>floor <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the floor of F.
+    <dt data-v-238d98fc>frexp <code data-v-238d98fc>      :  </code> F -> G I <dd data-v-238d98fc> G is the mantissa and I is the exponent of F
+      .Unless F = 0, 0.5 & lt; = abs(G) & lt; 1.0.
+    <dt data-v-238d98fc>ldexp <code data-v-238d98fc>      :  </code> F I -> G <dd data-v-238d98fc> G is F times 2 to the Ith power.
+    <dt data-v-238d98fc>log <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the natural logarithm of F.
+    <dt data-v-238d98fc>log10 <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the common logarithm of F.
+    <dt data-v-238d98fc>modf <code data-v-238d98fc>      :  </code> F -> G H <dd data-v-238d98fc> G is the fractional part and H is the integer part(
+      but expressed as a float) of F.
+    <dt data-v-238d98fc>pow <code data-v-238d98fc>      :  </code> F G -> H <dd data-v-238d98fc> H is F raised to the Gth power.
+    <dt data-v-238d98fc>sin <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the sine of F.
+    <dt data-v-238d98fc>sinh <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the hyperbolic sine of F.
+    <dt data-v-238d98fc>sqrt <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the square root of F.
+    <dt data-v-238d98fc>tan <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the tangent of F.
+    <dt data-v-238d98fc>tanh <code data-v-238d98fc>      :  </code> F -> G <dd data-v-238d98fc> G is the hyperbolic tangent of F.
+    <dt data-v-238d98fc>trunc <code data-v-238d98fc>      :  </code> F -> I <dd data-v-238d98fc> I is an integer equal to the float F truncated toward zero
+      .
+    <dt data-v-238d98fc>localtime <code data-v-238d98fc>      :  </code> I -> T <dd data-v-238d98fc> Converts a time I into a list T representing local time: [
+      year month day hour minute second isdst yearday weekday
+      ].Month is 1 = January...12 = December; isdst is a Boolean flagging daylight savings / summer time; weekday is 0 =
+      Monday...7 = Sunday.
+    <dt data-v-238d98fc>gmtime <code data-v-238d98fc>      :  </code> I -> T <dd data-v-238d98fc> Converts a time I into a list T representing universal time: [
+      year month day hour minute second isdst yearday
+      weekday
+      ].Month is 1 = January...12 = December; isdst is false; weekday is 0 = Monday...7 = Sunday.
+    <dt data-v-238d98fc>mktime <code data-v-238d98fc>      :  </code> T -> I <dd data-v-238d98fc> Converts a list T representing local time into a time I
+      .T is in the format generated by localtime.
+    <dt data-v-238d98fc>strftime <code data-v-238d98fc>      :  </code> T S1 -> S2 <dd data-v-238d98fc> Formats a list T in the format of localtime or gmtime using string S1 and pushes the result S2
+      .
+    <dt data-v-238d98fc>strtol <code data-v-238d98fc>      :  </code> S I -> J <dd data-v-238d98fc> String S is converted to the integer J using base I
+      .If I = 0, assumes base 10, but leading "0"
+      means base 8 and leading "0x"
+      means base 16.
+    <dt data-v-238d98fc>strtod <code data-v-238d98fc>      :  </code> S -> R <dd data-v-238d98fc> String S is converted to the float R
+      .
+    <dt data-v-238d98fc>format <code data-v-238d98fc>      :  </code> N C I J -> S <dd data-v-238d98fc> S is the formatted version of N in
+      mode C('d or '
+      i = decimal, 'o = octal, '
+      x or 'X = hex with lower or upper
+      case letters) with maximum width I and minimum width J.
+    <dt data-v-238d98fc>formatf <code data-v-238d98fc>      :  </code> F C I J -> S <dd data-v-238d98fc> S is the formatted version of F in
+      mode C('e or '
+      E = exponential, 'f = fractional, '
+      g or G = general with lower or upper
+      case letters) with maximum width I and precision J.
+    <dt data-v-238d98fc>srand <code data-v-238d98fc>      :  </code> I -> <dd data-v-238d98fc> Sets the random integer seed to integer I
+      .
+    <dt data-v-238d98fc>pred <code data-v-238d98fc>      :  </code> M -> N <dd data-v-238d98fc> Numeric N is the predecessor of numeric M
+      .
+    <dt data-v-238d98fc>succ <code data-v-238d98fc>      :  </code> M -> N <dd data-v-238d98fc> Numeric N is the successor of numeric M
+      .
+    <dt data-v-238d98fc>max <code data-v-238d98fc>      :  </code> N1 N2 -> N <dd data-v-238d98fc> N is the maximum of numeric values N1 and N2
+      .Also supports float.
+    <dt data-v-238d98fc>min <code data-v-238d98fc>      :  </code> N1 N2 -> N <dd data-v-238d98fc> N is the minimum of numeric values N1 and N2
+      .Also supports float.
+    <dt data-v-238d98fc>fclose <code data-v-238d98fc>      :  </code> S -> <dd data-v-238d98fc> Stream S is closed and removed from the stack
+      .
+    <dt data-v-238d98fc>feof <code data-v-238d98fc>      :  </code> S -> S B <dd data-v-238d98fc> B is the end - of - file status of stream S
+      .
+    <dt data-v-238d98fc>ferror <code data-v-238d98fc>      :  </code> S -> S B <dd data-v-238d98fc> B is the error status of stream S.
+    <dt data-v-238d98fc>fflush <code data-v-238d98fc>      :  </code> S -> S <dd data-v-238d98fc> Flush stream S, forcing all buffered output to be written
+      .
+    <dt data-v-238d98fc>fgetch <code data-v-238d98fc>      :  </code> S -> S C <dd data-v-238d98fc> C is the next available character from stream S
+      .
+    <dt data-v-238d98fc>fgets <code data-v-238d98fc>      :  </code> S -> S L <dd data-v-238d98fc> L is the next available line(as a string) from stream S
+      .
+    <dt data-v-238d98fc>fopen <code data-v-238d98fc>      :  </code> P M -> S <dd data-v-238d98fc> The file system object with pathname P is opened with mode M(
+      r, w, a, etc.) and stream object S is pushed;
+      if the open fails, file: NULL is pushed.
+    <dt data-v-238d98fc>fread <code data-v-238d98fc>      :  </code> S I -> S L <dd data-v-238d98fc> I bytes are read from the current position of stream S and returned as a list of I integers
+      .
+    <dt data-v-238d98fc>fwrite <code data-v-238d98fc>      :  </code> S L -> S <dd data-v-238d98fc> A list of integers are written as bytes to the current position of stream S
+      .
+    <dt data-v-238d98fc>fremove <code data-v-238d98fc>      :  </code> P -> B <dd data-v-238d98fc> The file system object with pathname P is removed from the file system
+      .is a boolean indicating success or failure.
+    <dt data-v-238d98fc>frename <code data-v-238d98fc>      :  </code> P1 P2 -> B <dd data-v-238d98fc> The file system object with pathname P1 is renamed to P2
+      .B is a boolean indicating success or failure.
+    <dt data-v-238d98fc>fput <code data-v-238d98fc>      :  </code> S X -> S <dd data-v-238d98fc> Writes X to stream S, pops X off stack
+      .
+    <dt data-v-238d98fc>fputch <code data-v-238d98fc>      :  </code> S C -> S <dd data-v-238d98fc> The character C is written to the current position of stream S
+      .
+    <dt data-v-238d98fc>fputchars <code data-v-238d98fc>      :  </code> S "abc.." -> S <dd data-v-238d98fc> The string abc..(no quotes) is written to the current position of stream S
+      .
+    <dt data-v-238d98fc>fputstring <code data-v-238d98fc>      :  </code> S "abc.." -> S <dd data-v-238d98fc>= = fputchars, as a temporary alternative
+      .
+    <dt data-v-238d98fc>fseek <code data-v-238d98fc>      :  </code> S P W -> S <dd data-v-238d98fc> Stream S is repositioned to position P relative to whence -
+      point W, where W = 0, 1, 2
+      for beginning, current position, end respectively.
+    <dt data-v-238d98fc>ftell <code data-v-238d98fc>      :  </code> S -> S I <dd data-v-238d98fc> I is the current position of stream S
+      .
+    <dt data-v-238d98fc>unstack <code data-v-238d98fc>      :  </code> [X Y..] ->..Y X <dd data-v-238d98fc> The list[X Y..] becomes the new stack
+      .
+    <dt data-v-238d98fc>cons <code data-v-238d98fc>      :  </code> X A -> B <dd data-v-238d98fc> Aggregate B is A with a new member X(
+      first member
+      for sequences).
+    <dt data-v-238d98fc>swons <code data-v-238d98fc>      :  </code> A X -> B <dd data-v-238d98fc> Aggregate B is A with a new member X(
+      first member
+      for sequences).
+    <dt data-v-238d98fc>first <code data-v-238d98fc>      :  </code> A -> F <dd data-v-238d98fc> F is the first member of the non -
+      empty aggregate A.
+    <dt data-v-238d98fc>rest <code data-v-238d98fc>      :  </code> A -> R <dd data-v-238d98fc> R is the non - empty aggregate A with its first member removed
+      .
+    <dt data-v-238d98fc>compare <code data-v-238d98fc>      :  </code> A B -> I <dd data-v-238d98fc> I( = -1, 0, +1) is the comparison of aggregates A and B
+      .The values correspond to the predicates & lt; = , = , & gt; = .
+    <dt data-v-238d98fc>at <code data-v-238d98fc>      :  </code> A I -> X <dd data-v-238d98fc> X( = A[I]) is the member of A at position I
+      .
+    <dt data-v-238d98fc>of <code data-v-238d98fc>      :  </code> I A -> X <dd data-v-238d98fc> X( = A[I]) is the I - th member of aggregate A
+      .
+    <dt data-v-238d98fc>size <code data-v-238d98fc>      :  </code> A -> I <dd data-v-238d98fc> Integer I is the number of elements of aggregate A
+      .
+    <dt data-v-238d98fc>opcase <code data-v-238d98fc>      :  </code> X[..[X Xs]..] ->
+      [Xs] 
+    <dd data-v-238d98fc> Indexing on type of X, returns the list[Xs].
+    <dt data-v-238d98fc>case <code data-v-238d98fc>      :  </code> X[..[X Y]..] -> Y i <dd data-v-238d98fc> Indexing on the value of X,
+      execute the matching Y.
+    <dt data-v-238d98fc>uncons <code data-v-238d98fc>      :  </code> A -> F R <dd data-v-238d98fc> F and R are the first and the rest of non -
+      empty aggregate A.
+    <dt data-v-238d98fc>unswons <code data-v-238d98fc>      :  </code> A -> R F <dd data-v-238d98fc> R and F are the rest and the first of non -
+      empty aggregate A.
+    <dt data-v-238d98fc>drop <code data-v-238d98fc>      :  </code> A N -> B <dd data-v-238d98fc> Aggregate B is the result of deleting the first N elements of A
+      .
+    <dt data-v-238d98fc>take <code data-v-238d98fc>      :  </code> A N -> B <dd data-v-238d98fc> Aggregate B is the result of retaining just the first N elements of A
+      .
+    <dt data-v-238d98fc>concat <code data-v-238d98fc>      :  </code> S T -> U <dd data-v-238d98fc> Sequence U is the concatenation of sequences S and T
+      .
+    <dt data-v-238d98fc>enconcat <code data-v-238d98fc>      :  </code> X S T -> U <dd data-v-238d98fc> Sequence U is the concatenation of sequences S and T with X inserted between S and T( ==
+      swapd cons concat)
+    <dt data-v-238d98fc>name <code data-v-238d98fc>      :  </code> sym ->
+      "sym" 
+    <dd data-v-238d98fc> For operators and combinators, the string "sym"
+      is the name of item sym,
+      for literals sym the result string is its type.
+    <dt data-v-238d98fc>intern <code data-v-238d98fc>      :  </code> "sym" -> sym <dd data-v-238d98fc> Pushes the item whose name is "sym"
+      .
+    <dt data-v-238d98fc>body <code data-v-238d98fc>      :  </code> U ->
+      [P] 
+    <dd data-v-238d98fc> Quotation[P] is the body of user - defined symbol U.predicate
+    <dt data-v-238d98fc>null <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests
+      for empty aggregate X or zero numeric.
+    <dt data-v-238d98fc>small <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether aggregate X has 0 or 1 members,
+      or numeric 0 or 1.
+    <dt data-v-238d98fc>>= <code data-v-238d98fc>      :  </code> X Y -> B <dd data-v-238d98fc> Either both X and Y are numeric or both are strings or symbols
+      .Tests whether X greater than or equal to Y.Also supports float.
+    <dt data-v-238d98fc>> <code data-v-238d98fc>      :  </code> X Y -> B <dd data-v-238d98fc> Either both X and Y are numeric or both are strings or symbols
+      .Tests whether X greater than Y.Also supports float.
+    <dt data-v-238d98fc>&lt;= <code data-v-238d98fc>      :  </code> X Y -> B <dd data-v-238d98fc> Either both X and Y are numeric or both are strings or symbols
+      .Tests whether X less than or equal to Y.Also supports float.
+    <dt data-v-238d98fc>&lt; <code data-v-238d98fc>      :  </code> X Y -> B <dd data-v-238d98fc> Either both X and Y are numeric or both are strings or symbols
+      .Tests whether X less than Y.Also supports float.
+    <dt data-v-238d98fc>!= <code data-v-238d98fc>      :  </code> X Y -> B <dd data-v-238d98fc> Either both X and Y are numeric or both are strings or symbols
+      .Tests whether X not equal to Y.Also supports float.
+    <dt data-v-238d98fc>= <code data-v-238d98fc>      :  </code> X Y -> B <dd data-v-238d98fc> Either both X and Y are numeric or both are strings or symbols
+      .Tests whether X equal to Y.Also supports float.
+    <dt data-v-238d98fc>equal <code data-v-238d98fc>      :  </code> T U -> B <dd data-v-238d98fc> (Recursively) tests whether trees T and U are identical
+      .
+    <dt data-v-238d98fc>has <code data-v-238d98fc>      :  </code> A X -> B <dd data-v-238d98fc> Tests whether aggregate A has X as a member
+      .
+    <dt data-v-238d98fc>in <code data-v-238d98fc>      :  </code> X A -> B <dd data-v-238d98fc> Tests whether X is a member of aggregate A
+      .
+    <dt data-v-238d98fc>integer <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is an integer.
+    <dt data-v-238d98fc>char <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is a character.
+    <dt data-v-238d98fc>logical <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is a logical.
+    <dt data-v-238d98fc>set <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is a set.
+    <dt data-v-238d98fc>string <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is a string.
+    <dt data-v-238d98fc>list <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is a list.
+    <dt data-v-238d98fc>leaf <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is not a list.
+    <dt data-v-238d98fc>user <code data-v-238d98fc>      :  </code> X -> B <dd data-v-238d98fc> Tests whether X is a user - defined symbol
+      .
+    <dt data-v-238d98fc>float <code data-v-238d98fc>      :  </code> R -> B <dd data-v-238d98fc> Tests whether R is a float.
+    <dt data-v-238d98fc>file <code data-v-238d98fc>      :  </code> F -> B <dd data-v-238d98fc> Tests whether F is a file.combinator
+    <dt data-v-238d98fc>i <code data-v-238d98fc>      :  </code> [P] ->... <dd data-v-238d98fc> Executes P.So, [P] i == P.
+    <dt data-v-238d98fc>x <code data-v-238d98fc>      :  </code> [P] i ->... <dd data-v-238d98fc> Executes P without popping[P].So, [P] x == [
+      P
+      ] P.
+    <dt data-v-238d98fc>dip <code data-v-238d98fc>      :  </code> X[P] ->...X <dd data-v-238d98fc> Saves X, executes P, pushes X back
+      .
+    <dt data-v-238d98fc>app1 <code data-v-238d98fc>      :  </code> X[P] -> R <dd data-v-238d98fc> Executes P, pushes result R on stack without X
+      .
+    <dt data-v-238d98fc>app11 <code data-v-238d98fc>      :  </code> X Y[P] -> R <dd data-v-238d98fc> Executes P, pushes result R on stack
+      .
+    <dt data-v-238d98fc>app12 <code data-v-238d98fc>      :  </code> X Y1 Y2[P] -> R1 R2 <dd data-v-238d98fc> Executes P twice, with Y1 and Y2,
+      returns R1 and R2.
+    <dt data-v-238d98fc>construct <code data-v-238d98fc>      :  </code> [P][
+      [P1][P2]..
+      ] -> R1 R2.. 
+    <dd data-v-238d98fc> Saves state of stack and then executes[P].Then executes each[Pi] to give Ri pushed onto saved stack
+      .
+    <dt data-v-238d98fc>nullary <code data-v-238d98fc>      :  </code> [P] -> R <dd data-v-238d98fc> Executes P, which leaves R on top of the stack
+      .No matter how many parameters this consumes, none are removed from the stack.
+    <dt data-v-238d98fc>unary <code data-v-238d98fc>      :  </code> X[P] -> R <dd data-v-238d98fc> Executes P, which leaves R on top of the stack
+      .No matter how many parameters this consumes, exactly one is removed from the stack.
+    <dt data-v-238d98fc>unary2 <code data-v-238d98fc>      :  </code> X1 X2[P] -> R1 R2 <dd data-v-238d98fc> Executes P twice, with X1 and X2 on top of the stack
+      .Returns the two values R1 and R2.
+    <dt data-v-238d98fc>unary3 <code data-v-238d98fc>      :  </code> X1 X2 X3[P] -> R1 R2 R3 <dd data-v-238d98fc> Executes P three times,
+      with Xi, returns Ri(i = 1..3).
+    <dt data-v-238d98fc>unary4 <code data-v-238d98fc>      :  </code> X1 X2 X3 X4[P] -> R1 R2 R3 R4 <dd data-v-238d98fc> Executes P four times,
+      with Xi, returns Ri(i = 1..4).
+    <dt data-v-238d98fc>app2 <code data-v-238d98fc>      :  </code> X1 X2[P] -> R1 R2 <dd data-v-238d98fc> Obsolescent. == unary2
+    <dt data-v-238d98fc>app3 <code data-v-238d98fc>      :  </code> X1 X2 X3[P] -> R1 R2 R3 <dd data-v-238d98fc> Obsolescent. ==
+      unary3
+    <dt data-v-238d98fc>app4 <code data-v-238d98fc>      :  </code> X1 X2 X3 X4[P] -> R1 R2 R3 R4 <dd data-v-238d98fc> Obsolescent. ==
+      unary4
+    <dt data-v-238d98fc>binary <code data-v-238d98fc>      :  </code> X Y[P] -> R <dd data-v-238d98fc> Executes P, which leaves R on top of the stack
+      .No matter how many parameters this consumes, exactly two are removed from the stack.
+    <dt data-v-238d98fc>ternary <code data-v-238d98fc>      :  </code> X Y Z[P] -> R <dd data-v-238d98fc> Executes P, which leaves R on top of the stack
+      .No matter how many parameters this consumes, exactly three are removed from the stack.
+    <dt data-v-238d98fc>cleave <code data-v-238d98fc>      :  </code> X[P1][P2] -> R1 R2 <dd data-v-238d98fc> Executes P1 and P2, each with X on top,
+      producing two results.
+    <dt data-v-238d98fc>branch <code data-v-238d98fc>      :  </code> B[T][F] ->... <dd data-v-238d98fc> If B is true, then executes T
+      else executes F.
+    <dt data-v-238d98fc>ifte <code data-v-238d98fc>      :  </code> [B][T][F] ->... <dd data-v-238d98fc> Executes B.If that yields true,
+      then executes T
+      else executes F.
+    <dt data-v-238d98fc>ifinteger <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is an integer,
+      executes T
+      else executes E.
+    <dt data-v-238d98fc>ifchar <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is a character, executes T
+      else executes E.
+    <dt data-v-238d98fc>iflogical <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is a logical or truth value,
+      executes T
+      else executes E.
+    <dt data-v-238d98fc>ifset <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is a set, executes T
+      else executes E.
+    <dt data-v-238d98fc>ifstring <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is a string, executes T
+      else executes E.
+    <dt data-v-238d98fc>iflist <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is a list, executes T
+      else executes E.
+    <dt data-v-238d98fc>iffloat <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is a float, executes T
+      else executes E.
+    <dt data-v-238d98fc>iffile <code data-v-238d98fc>      :  </code> X[T][E] ->... <dd data-v-238d98fc> If X is a file, executes T
+      else executes E.
+    <dt data-v-238d98fc>cond <code data-v-238d98fc>      :  </code> [..[
+      [Bi] Ti
+      ]..[D]] ->... 
+    <dd data-v-238d98fc> Tries each Bi.If that yields true, then executes Ti and exits.If no Bi yields true,
+      executes
+      default D.
+    <dt data-v-238d98fc>while <code data-v-238d98fc>      :  </code> [B][D] ->... <dd data-v-238d98fc> While executing B yields true executes D
+      .
+    <dt data-v-238d98fc>linrec <code data-v-238d98fc>      :  </code> [P][T][R1][R2] ->... <dd data-v-238d98fc> Executes P.If that yields true,
+      executes T.Else executes R1, recurses, executes R2.
+    <dt data-v-238d98fc>tailrec <code data-v-238d98fc>      :  </code> [P][T][R1] ->... <dd data-v-238d98fc> Executes P.If that yields true,
+      executes T.Else executes R1, recurses.
+    <dt data-v-238d98fc>binrec <code data-v-238d98fc>      :  </code> [B][T][R1][R2] ->... <dd data-v-238d98fc> Executes P.If that yields true,
+      executes T.Else uses R1 to produce two intermediates, recurses on both, then executes R2 to combines their results
+      .
+    <dt data-v-238d98fc>genrec <code data-v-238d98fc>      :  </code> [B][T][R1][R2] ->... <dd data-v-238d98fc> Executes B,
+      if that yields true executes T.Else executes R1 and then[[B][T][R1][R2] genrec] R2.
+    <dt data-v-238d98fc>condlinrec <code data-v-238d98fc>      :  </code> [
+      [C1][C2]..[D]
+      ] ->... 
+    <dd data-v-238d98fc> Each[Ci] is of the forms[[B][T]] or[[B][R1][R2]].Tries each B.If that yields true and there is just a[
+      T], executes T and exit.If there are[R1] and[R2], executes R1, recurses, executes R2.Subsequent
+      case are ignored.If no B yields true, then[D] is used.It is then of the forms[[T]] or[[R1][R2]].For the former,
+      executes T.For the latter executes R1, recurses, executes R2.
+    <dt data-v-238d98fc>step <code data-v-238d98fc>      :  </code> A[P] ->... <dd data-v-238d98fc> Sequentially putting members of aggregate A onto stack,
+      executes P
+      for each member of A.
+    <dt data-v-238d98fc>fold <code data-v-238d98fc>      :  </code> A V0[P] -> V <dd data-v-238d98fc> Starting with value V0,
+      sequentially pushes members of aggregate A and combines with binary operator P to produce value V.
+    <dt data-v-238d98fc>map <code data-v-238d98fc>      :  </code> A[P] -> B <dd data-v-238d98fc> Executes P on each member of aggregate A,
+      collects results in sametype aggregate B.
+    <dt data-v-238d98fc>times <code data-v-238d98fc>      :  </code> N[P] ->... <dd data-v-238d98fc> N times executes P.
+    <dt data-v-238d98fc>infra <code data-v-238d98fc>      :  </code> L1[P] -> L2 <dd data-v-238d98fc> Using list L1 as stack, executes P and returns a new list L2
+      .The first element of L1 is used as the top of stack, and after execution of P the top of stack becomes the first element of L2
+      .
+    <dt data-v-238d98fc>primrec <code data-v-238d98fc>      :  </code> X[I][C] -> R <dd data-v-238d98fc> Executes I to obtain an initial value R0
+      .For integer X uses increasing positive integers to X, combines by C
+      for new R.For aggregate X uses successive members and combines by C
+      for new R.
+    <dt data-v-238d98fc>filter <code data-v-238d98fc>      :  </code> A[B] -> A1 <dd data-v-238d98fc> Uses test B to filter aggregate A producing sametype aggregate A1
+      .
+    <dt data-v-238d98fc>split <code data-v-238d98fc>      :  </code> A[B] -> A1 A2 <dd data-v-238d98fc> Uses test B to split aggregate A into sametype aggregates A1 and A2
+      .
+    <dt data-v-238d98fc>some <code data-v-238d98fc>      :  </code> A[B] -> X <dd data-v-238d98fc> Applies test B to members of aggregate A,
+      X = true
+      if some pass.
+    <dt data-v-238d98fc>all <code data-v-238d98fc>      :  </code> A[B] -> X <dd data-v-238d98fc> Applies test B to members of aggregate A,
+      X = true
+      if all pass.
+    <dt data-v-238d98fc>treestep <code data-v-238d98fc>      :  </code> T[P] ->... <dd data-v-238d98fc> Recursively traverses leaves of tree T,
+      executes P
+      for each leaf.
+    <dt data-v-238d98fc>treerec <code data-v-238d98fc>      :  </code> T[O][C] ->... <dd data-v-238d98fc> T is a tree.If T is a leaf,
+      executes O.Else executes[[O][C] treerec] C.
+    <dt data-v-238d98fc>treegenrec <code data-v-238d98fc>      :  </code> T[O1][O2][C] ->... <dd data-v-238d98fc> T is a tree.If T is a leaf,
+      executes O1.Else executes O2 and then[[O1][O2][C] treegenrec] C.miscellaneous commands
+    <dt data-v-238d98fc>help <code data-v-238d98fc>      :  </code> -> <dd data-v-238d98fc> Lists all defined symbols, including those from library files
+      .Then lists all primitives of raw Joy(There is a variant: "_help"
+      which lists hidden symbols).
+    <dt data-v-238d98fc>helpdetail <code data-v-238d98fc>      :  </code> [S1 S2..] <dd data-v-238d98fc> Gives brief help on each symbol S in
+      the list.
+    <dt data-v-238d98fc>manual <code data-v-238d98fc>      :  </code> -> <dd data-v-238d98fc> Writes this manual of all Joy primitives to output file
+      .
+    <dt data-v-238d98fc>setautoput <code data-v-238d98fc>      :  </code> I -> <dd data-v-238d98fc> Sets value of flag
+      for automatic put to I(
+      if I = 0, none;
+      if I = 1, put;
+      if I = 2, stack.
+    <dt data-v-238d98fc>setundeferror <code data-v-238d98fc>      :  </code> I -> <dd data-v-238d98fc> Sets flag that controls behavior of undefined functions(
+      0 = no error, 1 = error).
+    <dt data-v-238d98fc>setecho <code data-v-238d98fc>      :  </code> I -> <dd data-v-238d98fc> Sets value of echo flag
+      for listing.I = 0: no echo, 1: echo, 2: with tab, 3: and linenumber.
+    <dt data-v-238d98fc>gc <code data-v-238d98fc>      :  </code> -> <dd data-v-238d98fc> Initiates garbage collection.
+    <dt data-v-238d98fc>system <code data-v-238d98fc>      :  </code> "command" -> <dd data-v-238d98fc> Escapes to shell, executes string "command"
+      .The string may cause execution of another program.When that has finished, the process returns to Joy.
+    <dt data-v-238d98fc>getenv <code data-v-238d98fc>      :  </code> "variable" ->
+      "value" 
+    <dd data-v-238d98fc> Retrieves the value of the environment variable "variable".
+    <dt data-v-238d98fc>argv <code data-v-238d98fc>      :  </code> -> A <dd data-v-238d98fc> Creates an aggregate A containing the interpreter 's command line arguments.
+    <dt data-v-238d98fc>argc <code data-v-238d98fc>      :  </code> -> I <dd data-v-238d98fc> Pushes the number of command line arguments
+      .This is quivalent to 'argv size'.
+    <dt data-v-238d98fc>get <code data-v-238d98fc>      :  </code> -> F <dd data-v-238d98fc> Reads a factor from input and pushes it onto stack
+      .
+    <dt data-v-238d98fc>put <code data-v-238d98fc>      :  </code> X -> <dd data-v-238d98fc> Writes X to output, pops X off stack.
+    <dt data-v-238d98fc>putch <code data-v-238d98fc>      :  </code> N -> <dd data-v-238d98fc> N: numeric, writes character whose ASCII is N
+      .
+    <dt data-v-238d98fc>putchars <code data-v-238d98fc>      :  </code> "abc.." -> <dd data-v-238d98fc> Writes abc..(without quotes)
+    <dt data-v-238d98fc>include <code data-v-238d98fc>      :  </code> "filnam.ext" -> <dd data-v-238d98fc> Transfers input to file whose name is "filnam.ext"
+      .On end - of - file returns to previous input file.
+    <dt data-v-238d98fc>abort <code data-v-238d98fc>      :  </code> -> <dd data-v-238d98fc> Aborts execution of current Joy program,
+      returns to Joy main cycle.
+    <dt data-v-238d98fc>quit <code data-v-238d98fc>      :  </code> -> <dd data-v-238d98fc> Exit from Joy.
+    </dl></article></div></main><footer data-v-c785faa8><p data-v-c785faa8><a href="https://github.com/joy-language/joy-lang.org" data-v-c785faa8>GitHub</a></footer></div></div></div><script type="text/javascript">window.__NUXT__={layout:"default",data:[{},{}],error:null,serverRendered:!0}</script><script defer src="/_nuxt/manifest.10669f42b2e188f55eb1.js"></script><script defer src="/_nuxt/layouts/default.29c0e08e13310e3682fc.js"></script><script defer src="/_nuxt/pages/papers-on-joy.cad646018fcc11e7f563.js"></script><script defer src="/_nuxt/pages/papers-on-joy/html-manual.e3473b0453170639a088.js"></script><script defer src="/_nuxt/vendor.230cb916d1973aa790f3.js"></script><script defer src="/_nuxt/app.0a856c7cf6fb3e349fa2.js"></script>
+  
+
